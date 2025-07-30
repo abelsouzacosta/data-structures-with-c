@@ -24,4 +24,13 @@ int insert_element_at_position(int element, int position, int *array);
  * @param *array reference to the array
  */
 int remove_element_from_position(int position, int *array);
+
+/**
+ * @brief replaces the element in the array given at the given position
+ *
+ * @param new_element the element that will replace the current
+ * @param position the position of the element
+ * @param *array reference to the array
+ */
+int replace_element_in_position(int new_element, int position, int *array);
 #endif // !INT_ARRAY
