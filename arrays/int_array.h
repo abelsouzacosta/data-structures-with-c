@@ -33,4 +33,13 @@ int remove_element_from_position(int position, int *array);
  * @param *array reference to the array
  */
 int replace_element_in_position(int new_element, int position, int *array);
+
+/**
+ * @brief resize the array given to the new size
+ *
+ * @param *array reference to the array
+ * @param new_size the new size of the array given
+ */
+int resize_array(int *array, int new_size);
+
 #endif // !INT_ARRAY
