@@ -16,4 +16,12 @@ int *create_int_array_with_size(int size);
  * @param *array reference to the array
  */
 int insert_element_at_position(int element, int position, int *array);
+
+/**
+ * @brief removes an element of the position given
+ *
+ * @param position position to remove the element
+ * @param *array reference to the array
+ */
+int remove_element_from_position(int position, int *array);
 #endif // !INT_ARRAY
