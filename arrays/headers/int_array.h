@@ -31,4 +31,14 @@ int *remove_element_at_position(int position, int size, int *array);
  */
 int *insert_first_position(int element, int size, int *array);
 
+/**
+ * @brief removes the element of the last position given
+ *
+ * Uses realloc to shrink the original array
+ *
+ * @param *array the reference to the array
+ * @param size the original size of the array
+ */
+int *remove_from_last_position(int *array, int size);
+
 #endif // !INT_ARRAY
