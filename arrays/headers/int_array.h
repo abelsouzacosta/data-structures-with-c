@@ -41,4 +41,15 @@ int *insert_first_position(int element, int size, int *array);
  */
 int *remove_from_last_position(int *array, int size);
 
+/**
+ * @brief insert a element in the last position
+ *
+ * Uses realloc to stretch the array and the inserts a new element there
+ *
+ * @param *array the reference to the array
+ * @param size the size of the original array
+ * @param element the new element to be inserted at the end of the array
+ */
+int insert_at_last_position(int *array, int size, int element);
+
 #endif // !INT_ARRAY
