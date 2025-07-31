@@ -16,14 +16,14 @@ int main(int argc, char *argv[]) {
   printf("Type a number ot look for: ");
   scanf("%d", &term);
 
-  int position = binary_search(numbers, SIZE, term);
+  int position = element_at(numbers, SIZE, term);
 
-  if (!position)
+  if (position < 0) {
     printf("The number is not within the array");
-  else
-    printf("The number %d is at the position %d\n", term, position);
+    printf("%d", numbers[position]);
 
-  printf("%d", numbers[position]);
+  } else
+    printf("The number %d is at the position %d\n", term, position);
 
   free(numbers);
 }
