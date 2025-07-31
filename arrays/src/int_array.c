@@ -106,7 +106,7 @@ int *insert_at_last_position(int *array, int size, int element) {
   return array;
 }
 
-int binary_search(int *array, int size, int element) {
+int _binary_search(int *array, int size, int element) {
   int right = size - 1;
   int left = 0;
   while (left <= right) {
