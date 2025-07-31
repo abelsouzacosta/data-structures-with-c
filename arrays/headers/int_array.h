@@ -61,6 +61,7 @@ int *insert_at_last_position(int *array, int size, int element);
  *
  * @returns index the index of the element within the array
  */
-int binary_search(int *array, int size, int element);
+int _binary_search(int *array, int size, int element);
+
 
 #endif // !INT_ARRAY
