@@ -76,3 +76,32 @@ int *insert_first_position(int element, int size, int *array) {
   array[0] = element;
   return array;
 }
+
+int *insert_at_last_position(int *array, int size, int element) {
+  if (!array) {
+    fprintf(stderr, "No array was provided");
+    return NULL;
+  }
+  if (!size) {
+    fprintf(stderr, "The size of the array was not provided");
+    return NULL;
+  }
+  if (!element) {
+    fprintf(stderr, "The element to be inserted was not provided");
+    return NULL;
+  }
+  // reallocates the array
+  int new_array_size = size + 1;
+  int *new_array = realloc(array, sizeof(int) * new_array_size);
+  if (new_array == NULL) {
+    perror("Was not possible to reallocate the array given");
+    return NULL;
+  }
+  printf("here");
+  array = new_array;
+  // the last position of the new realloced array
+  // will be the size of the original array
+  int last_position = size;
+  array[last_position] = element;
+  return array;
+}

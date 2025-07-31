@@ -50,6 +50,6 @@ int *remove_from_last_position(int *array, int size);
  * @param size the size of the original array
  * @param element the new element to be inserted at the end of the array
  */
-int insert_at_last_position(int *array, int size, int element);
+int *insert_at_last_position(int *array, int size, int element);
 
 #endif // !INT_ARRAY

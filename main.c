@@ -14,10 +14,11 @@ int main(int argc, char *argv[]) {
 
   numbers = remove_element_at_position(2, 5, numbers);
   numbers = insert_first_position(15, 4, numbers);
+  numbers = insert_at_last_position(numbers, 5, 17);
 
   printf("[");
-  for (int counter = 0; counter < 5; counter += 1) {
-    if (counter == 4)
+  for (int counter = 0; counter < 6; counter += 1) {
+    if (counter == 5)
       printf("%d", numbers[counter]);
     else
       printf("%d, ", numbers[counter]);
