@@ -1,4 +1,4 @@
-#include "arrays/int_array.h"
+#include "arrays/headers/int_array.h"
 #include <stdio.h>
 #include <stdlib.h>
 

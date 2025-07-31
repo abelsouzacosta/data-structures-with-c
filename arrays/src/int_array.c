@@ -1,4 +1,4 @@
-#include "../arrays/int_array.h"
+#include "../headers/int_array.h"
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
