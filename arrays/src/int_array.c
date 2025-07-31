@@ -123,5 +123,6 @@ int _binary_search(int *array, int size, int element) {
       right = middle - 1;
     }
   }
-  return 1;
+  return -1;
+}
 }
