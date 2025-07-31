@@ -18,4 +18,17 @@ int *create_int_array_with_size(int size);
  */
 int *remove_element_at_position(int position, int size, int *array);
 
+/**
+ * @brief inserts an element at the first position
+ *
+ * Resizes the original array with realloc
+ * then shift the elements to the right
+ * and then insert the element provided in the first position
+ *
+ * @param element the element to be inserted
+ * @param size the original size of the array
+ * @param *array the reference to the array
+ */
+int *insert_first_position(int element, int size, int *array);
+
 #endif // !INT_ARRAY
