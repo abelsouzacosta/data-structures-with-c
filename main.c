@@ -10,14 +10,19 @@ int main(int argc, char *argv[]) {
     printf("%d ", numbers[counter]);
   }
 
-  printf("---\n");
+  printf("\n---\n");
 
   numbers = remove_element_at_position(2, 5, numbers);
   numbers = insert_first_position(15, 4, numbers);
 
+  printf("[");
   for (int counter = 0; counter < 5; counter += 1) {
-    printf("%d ", numbers[counter]);
+    if (counter == 4)
+      printf("%d", numbers[counter]);
+    else
+      printf("%d, ", numbers[counter]);
   }
+  printf("]");
 
   free(numbers);
 }
