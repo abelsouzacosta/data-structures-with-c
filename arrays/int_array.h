@@ -16,5 +16,6 @@ int *create_int_array_with_size(int size);
  * @param size the size of the array
  * @param *array reference to the array
  */
+int *remove_element_at_position(int position, int size, int *array);
 
 #endif // !INT_ARRAY
