@@ -62,18 +62,17 @@ int *insert_first_position(int element, int size, int *array) {
     fprintf(stderr, "No array was provided");
     return NULL;
   }
-  // creates a new array
+  // reallocates the array
   int new_array_size = size + 1;
   int *new_array = realloc(array, sizeof(int) * new_array_size);
   if (new_array == NULL) {
-    fprintf(stderr, "Was not possible to reallocate the array");
+    fprintf(stderr, "Was not possible to realloc the array");
     return NULL;
   }
-  new_array[0] = element;
-  // Will insert only the elements within the old array
-  for (int counter = 0; counter < size; counter += 1) {
-    new_array[counter + 1] = array[counter];
-  }
   array = new_array;
+  for (int counter = new_array_size; counter > 0; counter -= 1) {
+    array[counter] = array[counter - 1];
+  }
+  array[0] = element;
   return array;
 }
