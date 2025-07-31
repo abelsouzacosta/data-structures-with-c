@@ -105,3 +105,23 @@ int *insert_at_last_position(int *array, int size, int element) {
   array[last_position] = element;
   return array;
 }
+
+int binary_search(int *array, int size, int element) {
+  int right = size - 1;
+  int left = 0;
+  while (left <= right) {
+    int middle = (left + right) / 2;
+
+    if (array[middle] == element)
+      return middle;
+    if (array[middle] < element) {
+      // element at the rightmost part of the section
+      left = middle + 1;
+    }
+    if (array[middle] > element) {
+      // element at the leftmost part of the section
+      right = middle - 1;
+    }
+  }
+  return 1;
+}
