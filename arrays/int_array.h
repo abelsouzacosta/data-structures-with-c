@@ -1,4 +1,5 @@
 #ifndef INT_ARRAY
+#define INT_ARRAY
 
 /**
  * @brief creates an malloced array with the size given as parameter
