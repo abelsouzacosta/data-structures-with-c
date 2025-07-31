@@ -70,8 +70,9 @@ int *insert_first_position(int element, int size, int *array) {
     return NULL;
   }
   new_array[0] = element;
-  for (int counter = 1; counter < new_array_size; counter += 1) {
-    new_array[counter] = array[counter];
+  // Will insert only the elements within the old array
+  for (int counter = 0; counter < size; counter += 1) {
+    new_array[counter + 1] = array[counter];
   }
   array = new_array;
   return array;
