@@ -125,4 +125,19 @@ int _binary_search(int *array, int size, int element) {
   }
   return -1;
 }
+
+int element_at(int *array, int size, int element) {
+  if (!array) {
+    perror("The array was not provided");
+    return -1;
+  }
+  if (!size) {
+    fprintf(stderr, "The size of the array was not provided");
+    return -1;
+  }
+  if (!element) {
+    fprintf(stderr, "The element to be searched was not provided");
+    return -1;
+  }
+  return _binary_search(array, size, element);
 }
