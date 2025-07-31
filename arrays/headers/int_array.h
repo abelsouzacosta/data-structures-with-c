@@ -63,5 +63,16 @@ int *insert_at_last_position(int *array, int size, int element);
  */
 int _binary_search(int *array, int size, int element);
 
+/**
+ * @brief uses the binary search method to return the position of a given
+ * element, if the element does not exists, then returns -1
+ *
+ * @param *array the reference to the array
+ * @param size the size of the array
+ * @param element the element of the array
+ *
+ * @returns position the position of the element within the array
+ */
+int element_at(int *array, int size, int element);
 
 #endif // !INT_ARRAY
