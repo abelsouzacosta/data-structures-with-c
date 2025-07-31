@@ -5,17 +5,18 @@
 int main(int argc, char *argv[]) {
   int *numbers = create_int_array_with_size(5);
 
-  printf("The old array: ");
   for (int counter = 0; counter < 5; counter += 1) {
     numbers[counter] = counter;
-    printf("%d\n", numbers[counter]);
+    printf("%d ", numbers[counter]);
   }
 
-  numbers = remove_element_at_position(2, 5, numbers);
+  printf("---\n");
 
-  printf("The new array: ");
-  for (int counter = 0; counter <= 5; counter += 1) {
-    printf("%d\n", numbers[counter]);
+  numbers = remove_element_at_position(2, 5, numbers);
+  numbers = insert_first_position(15, 4, numbers);
+
+  for (int counter = 0; counter < 5; counter += 1) {
+    printf("%d ", numbers[counter]);
   }
 
   free(numbers);
