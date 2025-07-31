@@ -48,3 +48,31 @@ int *remove_element_at_position(int position, int size, int *array) {
   free(array);
   return new_array;
 }
+
+int *insert_first_position(int element, int size, int *array) {
+  if (!element) {
+    fprintf(stderr, "The element to be inserted was not provided");
+    return NULL;
+  }
+  if (!size) {
+    fprintf(stderr, "The size of the array was not provided");
+    return NULL;
+  }
+  if (!array) {
+    fprintf(stderr, "No array was provided");
+    return NULL;
+  }
+  // creates a new array
+  int new_array_size = size + 1;
+  int *new_array = realloc(array, sizeof(int) * new_array_size);
+  if (new_array == NULL) {
+    fprintf(stderr, "Was not possible to reallocate the array");
+    return NULL;
+  }
+  new_array[0] = element;
+  for (int counter = 1; counter < new_array_size; counter += 1) {
+    new_array[counter] = array[counter];
+  }
+  array = new_array;
+  return array;
+}
