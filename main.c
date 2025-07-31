@@ -2,28 +2,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define SIZE 5000000
+
 int main(int argc, char *argv[]) {
-  int *numbers = create_int_array_with_size(5);
+  int *numbers = create_int_array_with_size(SIZE);
 
-  for (int counter = 0; counter < 5; counter += 1) {
-    numbers[counter] = counter;
-    printf("%d ", numbers[counter]);
+  for (int counter = 0; counter < SIZE; counter += 1) {
+    int number = (counter * 2) + 1;
+    numbers[counter] = number;
   }
 
-  printf("\n---\n");
+  int term;
+  printf("Type a number ot look for: ");
+  scanf("%d", &term);
 
-  numbers = remove_element_at_position(2, 5, numbers);
-  numbers = insert_first_position(15, 4, numbers);
-  numbers = insert_at_last_position(numbers, 5, 17);
+  int position = binary_search(numbers, SIZE, term);
 
-  printf("[");
-  for (int counter = 0; counter < 6; counter += 1) {
-    if (counter == 5)
-      printf("%d", numbers[counter]);
-    else
-      printf("%d, ", numbers[counter]);
-  }
-  printf("]");
+  if (!position)
+    printf("The number is not within the array");
+  else
+    printf("The number %d is at the position %d\n", term, position);
+
+  printf("%d", numbers[position]);
 
   free(numbers);
 }
