@@ -38,7 +38,7 @@ int *remove_element_at_position(int position, int size, int *array) {
   // creates a new array
   int *new_array = create_int_array_with_size(new_array_size);
   // shift the elements in the original array to the left
-  for (int counter = position; counter < size; counter += 1) {
+  for (int counter = position; counter < size - 1; counter += 1) {
     array[counter] = array[counter + 1];
   }
   // populates the new array with the contents of the old one
