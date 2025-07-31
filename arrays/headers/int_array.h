@@ -52,4 +52,15 @@ int *remove_from_last_position(int *array, int size);
  */
 int *insert_at_last_position(int *array, int size, int element);
 
+/**
+ * @brief search for the element in the array using binary search
+ *
+ * @param *array the reference to the array
+ * @param size size of the given array
+ * @param element the element to search for
+ *
+ * @returns index the index of the element within the array
+ */
+int binary_search(int *array, int size, int element);
+
 #endif // !INT_ARRAY
