@@ -18,3 +18,33 @@ int *create_int_array_with_size(int size) {
   return array;
 }
 
+int *remove_element_at_position(int position, int size, int *array) {
+  if (!position) {
+    fprintf(stderr, "Position was not provided");
+    return NULL;
+  }
+  if (!size) {
+    fprintf(stderr, "The size of the array was not provided");
+    return NULL;
+  }
+  if (!array) {
+    fprintf(stderr, "Array was not provided");
+    return NULL;
+  }
+  // the element removed
+  int element_removed = array[position];
+  // calculates the size for the new array
+  int new_array_size = size - 1;
+  // creates a new array
+  int *new_array = create_int_array_with_size(new_array_size);
+  // shift the elements in the original array to the left
+  for (int counter = position; counter < size; counter += 1) {
+    array[counter] = array[counter + 1];
+  }
+  // populates the new array with the contents of the old one
+  for (int counter = 0; counter < new_array_size; counter += 1) {
+    new_array[counter] = array[counter];
+  }
+  free(array);
+  return new_array;
+}
