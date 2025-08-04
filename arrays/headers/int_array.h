@@ -84,4 +84,12 @@ int element_at(int *array, int size, int element);
  */
 int get_lowest_from_array(int *array, int size);
 
+/**
+ * @brief gets an array and prints it
+ *
+ * @param array* reference to the array
+ * @param size the size of the array given
+ */
+void print_array(int *array, int size);
+
 #endif // !INT_ARRAY
