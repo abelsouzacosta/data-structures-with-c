@@ -178,3 +178,20 @@ void print_array(int *array, int size) {
   }
   printf("]");
 }
+
+int *pop(int *array, int size, int element) {
+  unsigned int position = -1;
+  for (unsigned int counter = 0; counter < size; counter += 1) {
+    if (array[counter] == element) {
+      position = counter;
+      break;
+    }
+  }
+
+  if (position == -1) {
+    fprintf(stderr, "Element %d not found in the array", element);
+    return NULL;
+  }
+
+  return remove_element_at_position(position, size, array);
+}
