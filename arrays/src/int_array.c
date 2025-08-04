@@ -141,6 +141,25 @@ int element_at(int *array, int size, int element) {
   }
   return _binary_search(array, size, element);
 }
+
+int get_lowest_from_array(int *array, int size) {
+  if (!array) {
+    perror("No array was provided");
+    return -1;
+  }
+  if (!size) {
+    fprintf(stderr, "No size was provided for the array given");
+    return -1;
+  }
+  int lowest = array[0]; // takes the first element as the lowest
+  for (int counter = 1; counter < size; counter += 1) {
+    if (array[counter] <= lowest)
+      lowest = array[counter];
+  }
+
+  return lowest;
+}
+
 void print_array(int *array, int size) {
   if (!array) {
     perror("No array was provided");
