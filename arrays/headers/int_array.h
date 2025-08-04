@@ -92,4 +92,14 @@ int get_lowest_from_array(int *array, int size);
  */
 void print_array(int *array, int size);
 
+/**
+ * @brief remove the element given from the array
+ *
+ * @param *array reference to the array
+ * @param size the size of the array
+ * @param element element to be removed
+ *
+ * @returns array with all elements of the original but element
+ */
+int *pop(int *array, int size, int element);
 #endif // !INT_ARRAY
