@@ -141,3 +141,21 @@ int element_at(int *array, int size, int element) {
   }
   return _binary_search(array, size, element);
 }
+void print_array(int *array, int size) {
+  if (!array) {
+    perror("No array was provided");
+    exit(1);
+  }
+  if (!size) {
+    fprintf(stderr, "No size was provided to the given array");
+    exit(1);
+  }
+  printf("[");
+  for (int counter = 0; counter < size; counter += 1) {
+    if (counter == size - 1)
+      printf("%d", array[counter]);
+    else
+      printf("%d, ", array[counter]);
+  }
+  printf("]");
+}
