@@ -1,29 +1,15 @@
 #include "arrays/headers/int_array.h"
-#include <stdio.h>
 #include <stdlib.h>
-
-#define SIZE 5000000
+#include <time.h>
 
 int main(int argc, char *argv[]) {
-  int *numbers = create_int_array_with_size(SIZE);
+  srand(time(NULL));
+  int number_of_elements = 5;
+  int *numbers = malloc(sizeof(int) * number_of_elements);
 
-  for (int counter = 0; counter < SIZE; counter += 1) {
-    int number = (counter * 2) + 1;
-    numbers[counter] = number;
+  for (int counter = 0; counter < number_of_elements; counter += 1) {
+    numbers[counter] = (rand() % 100) + 1;
   }
 
-  int term;
-  printf("Type a number ot look for: ");
-  scanf("%d", &term);
-
-  int position = element_at(numbers, SIZE, term);
-
-  if (position < 0) {
-    printf("The number is not within the array");
-    printf("%d", numbers[position]);
-
-  } else
-    printf("The number %d is at the position %d\n", term, position);
-
-  free(numbers);
+  print_array(numbers, number_of_elements);
 }
