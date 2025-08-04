@@ -1,4 +1,5 @@
 #include "arrays/headers/int_array.h"
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
@@ -12,4 +13,9 @@ int main(int argc, char *argv[]) {
   }
 
   print_array(numbers, number_of_elements);
+
+  printf("\nThe lowest number in the array given is: %d",
+         get_lowest_from_array(numbers, number_of_elements));
+
+  return 0;
 }
