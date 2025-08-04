@@ -75,4 +75,13 @@ int _binary_search(int *array, int size, int element);
  */
 int element_at(int *array, int size, int element);
 
+/**
+ * @brief returns the lower element from the array given
+ *
+ * @param array* reference to the array
+ * @param size the size of the array
+ * @return lowest the lowest number in the array
+ */
+int get_lowest_from_array(int *array, int size);
+
 #endif // !INT_ARRAY
