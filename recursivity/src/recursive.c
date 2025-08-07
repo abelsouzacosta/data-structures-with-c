@@ -5,13 +5,13 @@
 void countdown(unsigned int number) {
   if (number < 0) {
     fprintf(stderr, "An invalid number was provided");
-    exit(1);
+    return;
   }
 
   // base case
   if (number == 0) {
     printf("0");
-    exit(0);
+    return;
   } else { // recursive case
     printf("%d...", number);
     countdown(number - 1);
