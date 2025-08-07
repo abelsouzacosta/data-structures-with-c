@@ -17,3 +17,14 @@ void countdown(unsigned int number) {
     countdown(number - 1);
   }
 }
+
+int factorial(unsigned int number) {
+  if (number <= 0) {
+    fprintf(stderr, "Invalid argument provided");
+    return -1;
+  }
+  if (number == 1) // base case
+    return 1;
+  else // recursive case
+    return number * factorial(number - 1);
+}
