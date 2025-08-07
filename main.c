@@ -9,5 +9,9 @@ int main(int argc, char *argv[]) {
 
   countdown(user_input);
 
+  unsigned int factorial_result = factorial(user_input);
+
+  printf("\nThe result of the factorial is: %d", factorial_result);
+
   return 0;
 }
