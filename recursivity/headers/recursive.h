@@ -7,4 +7,12 @@
  * @param number starting number
  */
 void countdown(unsigned int number);
+
+/**
+ * @brief prints the factorial of the number given
+ *
+ * @param number number to print the factorial
+ */
+int factorial(unsigned int number);
+
 #endif // !RECURSIVE
