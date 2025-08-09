@@ -26,3 +26,17 @@ LinkedList *init_list(void) {
   return list;
 }
 
+void insert_at_head(LinkedList *list, unsigned int data) {
+  Node *node = create_node(data);
+
+  // check if the list is not empty
+  if (list->head != NULL) {
+    Node *old_head = list->head; // aux to receive the previous head
+    list->head = node;
+    node->next = old_head;
+  } else { // the tail stills the same for every insertion at the head
+    list->head = node;
+    list->tail = node;
+  }
+}
+
