@@ -40,3 +40,36 @@ void insert_at_head(LinkedList *list, unsigned int data) {
   }
 }
 
+void print_list(LinkedList *list) {
+  if (!list) {
+    fprintf(stderr, "No list was provided to print");
+    exit(EXIT_FAILURE);
+  }
+
+  Node *current = list->head;
+
+  while (current != NULL) {
+    printf("%u -> ", current->data);
+    current = current->next;
+  }
+
+  // if the list is empty or at the end
+  if (current == NULL)
+    printf("NULL");
+}
+
+int get_tail(LinkedList *list) {
+  if (list->tail == NULL) {
+    fprintf(stdout, "List empty");
+    exit(EXIT_SUCCESS);
+  }
+  return list->tail->data;
+}
+
+int get_head(LinkedList *list) {
+  if (list->head == NULL) {
+    fprintf(stdout, "List empty");
+    exit(EXIT_SUCCESS);
+  }
+  return list->head->data;
+}
