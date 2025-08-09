@@ -14,3 +14,15 @@ Node *create_node(unsigned int data) {
   return new_node;
 }
 
+LinkedList *init_list(void) {
+  LinkedList *list = malloc(sizeof(LinkedList));
+  if (list == NULL) {
+    perror("Was not possible to allocate memory to the list");
+    exit(EXIT_FAILURE);
+  }
+  list->head = NULL;
+  list->tail = NULL;
+
+  return list;
+}
+
