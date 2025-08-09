@@ -40,6 +40,20 @@ void insert_at_head(LinkedList *list, unsigned int data) {
   }
 }
 
+void insert_at_tail(LinkedList *list, unsigned int data) {
+  Node *node = create_node(data);
+
+  // if the list is not empty
+  if (list->tail != NULL) {
+    Node *current_tail = list->tail; // aux to store the current tail
+    current_tail->next = node; // update the next pointer of the current tail
+    list->tail = node;         // update the tail pointer to the new node
+  } else {                     // list is empty
+    list->head = node;
+    list->tail = node;
+  }
+}
+
 void print_list(LinkedList *list) {
   if (!list) {
     fprintf(stderr, "No list was provided to print");
