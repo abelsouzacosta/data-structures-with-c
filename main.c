@@ -11,6 +11,12 @@ int main(int argc, char *argv[]) {
   insert_at_head(list, 40);
   insert_at_head(list, 50);
   insert_at_tail(list, 60);
+  insert_at_tail(list, 70);
+  insert_at_tail(list, 100);
+  insert_at_head(list, 200);
+
+  insert_after_element(list, 30, 300);
+  insert_after_element(list, 100, 10000);
 
   print_list(list);
 
