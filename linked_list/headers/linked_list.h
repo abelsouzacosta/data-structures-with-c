@@ -12,4 +12,7 @@ typedef struct LinkedList {
 } LinkedList;
 
 Node *create_node(unsigned int data);
+
+LinkedList *init_list(void);
+
 #endif
