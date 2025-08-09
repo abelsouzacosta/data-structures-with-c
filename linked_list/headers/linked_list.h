@@ -11,4 +11,5 @@ typedef struct LinkedList {
   struct Node *tail;
 } LinkedList;
 
+Node *create_node(unsigned int data);
 #endif
