@@ -1,17 +1,21 @@
-#include "recursivity/headers/recursive.h"
+#include "linked_list/headers/linked_list.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(int argc, char *argv[]) {
-  unsigned int user_input;
+  LinkedList *list = init_list();
 
-  printf("Enter a number: ");
-  scanf("%d", &user_input);
+  insert_at_head(list, 10);
+  insert_at_head(list, 20);
+  insert_at_head(list, 30);
+  insert_at_head(list, 40);
+  insert_at_head(list, 50);
+  insert_at_tail(list, 60);
 
-  countdown(user_input);
+  print_list(list);
 
-  unsigned int factorial_result = factorial(user_input);
+  printf("\nThe tail of the list is %u", get_tail(list));
+  printf("\nThe head of the list is %u", get_head(list));
 
-  printf("\nThe result of the factorial is: %d", factorial_result);
-
-  return 0;
+  free(list);
 }
