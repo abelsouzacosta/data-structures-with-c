@@ -19,6 +19,9 @@ void insert_at_tail(LinkedList *list, unsigned int data);
 
 void insert_at_head(LinkedList *list, unsigned int data);
 
+void insert_after_element(LinkedList *list, unsigned int reference,
+                          unsigned int data);
+
 void list_lenth(LinkedList *list);
 
 void print_list(LinkedList *list);
