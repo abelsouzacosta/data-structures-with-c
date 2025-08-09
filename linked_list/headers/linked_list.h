@@ -15,6 +15,7 @@ Node *create_node(unsigned int data);
 
 LinkedList *init_list(void);
 
+void insert_at_tail(LinkedList *list, unsigned int data);
 
 void insert_at_head(LinkedList *list, unsigned int data);
 
