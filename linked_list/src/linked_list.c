@@ -65,11 +65,12 @@ void insert_after_element(LinkedList *list, unsigned int reference,
   Node *current = list->head;
 
   // iterates until the reference
-  while (current->data != reference && current != NULL) {
+  while (current != NULL && current->data != reference) {
     current = current->next;
   }
 
-  if (current->data == reference) {
+  // reference is found
+  if (current != NULL && current->data == reference) {
     // stores the next node of the reference
     Node *next_node = current->next;
     // updates the next pointer of the reference
@@ -77,6 +78,8 @@ void insert_after_element(LinkedList *list, unsigned int reference,
     // updates the next pointer of the new node to
     // the previous next pointer
     new_node->next = next_node;
+  } else {
+    insert_at_tail(list, data);
   }
 }
 
