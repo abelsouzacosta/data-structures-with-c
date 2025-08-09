@@ -54,6 +54,32 @@ void insert_at_tail(LinkedList *list, unsigned int data) {
   }
 }
 
+void insert_after_element(LinkedList *list, unsigned int reference,
+                          unsigned int data) {
+  Node *new_node = create_node(data);
+  if (!list) {
+    perror("List was not provided");
+    exit(EXIT_FAILURE);
+  }
+
+  Node *current = list->head;
+
+  // iterates until the reference
+  while (current->data != reference && current != NULL) {
+    current = current->next;
+  }
+
+  if (current->data == reference) {
+    // stores the next node of the reference
+    Node *next_node = current->next;
+    // updates the next pointer of the reference
+    current->next = new_node;
+    // updates the next pointer of the new node to
+    // the previous next pointer
+    new_node->next = next_node;
+  }
+}
+
 void print_list(LinkedList *list) {
   if (!list) {
     fprintf(stderr, "No list was provided to print");
