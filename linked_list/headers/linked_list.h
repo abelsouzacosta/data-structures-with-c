@@ -18,4 +18,12 @@ LinkedList *init_list(void);
 
 void insert_at_head(LinkedList *list, unsigned int data);
 
+void list_lenth(LinkedList *list);
+
+void print_list(LinkedList *list);
+
+int get_tail(LinkedList *list);
+
+int get_head(LinkedList *list);
+
 #endif
