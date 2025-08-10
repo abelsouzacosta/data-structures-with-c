@@ -128,16 +128,14 @@ void delete_from_head(LinkedList *list) {
     return;
 
   // list is not empty
-  if (list->head != NULL) {
-    // takes the second element from the list
-    Node *second_element = list->head->next;
-    // takes the current head
-    Node *current_head = list->head;
-    // delete the current head
-    free(current_head);
-    // move the pointer of the head to the second element
-    list->head = second_element;
-  }
+  // takes the second element from the list
+  Node *second_element = list->head->next;
+  // takes the current head
+  Node *current_head = list->head;
+  // delete the current head
+  free(current_head);
+  // move the pointer of the head to the second element
+  list->head = second_element;
 }
 
 void delete_from_tail(LinkedList *list) {
