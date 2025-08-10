@@ -123,6 +123,10 @@ void delete_from_head(LinkedList *list) {
     exit(EXIT_FAILURE);
   }
 
+  // list is empty
+  if (list->head == NULL)
+    return;
+
   // list is not empty
   if (list->head != NULL) {
     // takes the second element from the list
@@ -134,10 +138,6 @@ void delete_from_head(LinkedList *list) {
     // move the pointer of the head to the second element
     list->head = second_element;
   }
-
-  // list is empty
-  if (list->head == NULL)
-    return;
 }
 
 void delete_from_tail(LinkedList *list) {
