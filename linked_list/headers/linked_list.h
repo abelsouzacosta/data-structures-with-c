@@ -32,4 +32,6 @@ int get_head(LinkedList *list);
 
 void delete_from_head(LinkedList *list);
 
+void delete_from_tail(LinkedList *list);
+
 #endif
