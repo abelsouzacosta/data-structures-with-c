@@ -127,6 +127,13 @@ void delete_from_head(LinkedList *list) {
   if (list->head == NULL)
     return;
 
+  // list has only one element
+  if (list->head == list->tail) {
+    free(list->head);
+    list->head = list->tail = NULL;
+    return;
+  }
+
   // list is not empty
   // takes the second element from the list
   Node *second_element = list->head->next;
