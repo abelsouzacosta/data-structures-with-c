@@ -146,8 +146,20 @@ void delete_from_tail(LinkedList *list) {
     exit(EXIT_FAILURE);
   }
 
-  // the list is not empty
-  // is necessary to keep track of the previous element
+  // if the list is empty
+  if (!list->head)
+    return;
+
+  // in the case that there are only one
+  // node within the list
+  if (list->head == list->tail) {
+    free(list->head);
+    list->head = list->tail = NULL;
+    return;
+  }
+
+  // the list is not empty and there are more than one
+  // element within it
   if (list->tail != NULL) {
     Node *current = list->head;
     Node *current_tail = list->tail;
@@ -160,8 +172,4 @@ void delete_from_tail(LinkedList *list) {
     // deletes the previous tail from memory
     free(current_tail);
   }
-
-  // if the list is empty
-  if (list->tail == NULL)
-    return;
 }
