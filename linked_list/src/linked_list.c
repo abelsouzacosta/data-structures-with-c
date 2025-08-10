@@ -139,3 +139,29 @@ void delete_from_head(LinkedList *list) {
   if (list->head == NULL)
     return;
 }
+
+void delete_from_tail(LinkedList *list) {
+  if (!list) {
+    fprintf(stderr, "No list was provided");
+    exit(EXIT_FAILURE);
+  }
+
+  // the list is not empty
+  // is necessary to keep track of the previous element
+  if (list->tail != NULL) {
+    Node *current = list->head;
+    Node *current_tail = list->tail;
+    // goes until tail - 1
+    while (current->next != list->tail) {
+      current = current->next;
+    }
+    // removes the reference in the tail - 1 element
+    current->next = NULL;
+    // deletes the previous tail from memory
+    free(current_tail);
+  }
+
+  // if the list is empty
+  if (list->tail == NULL)
+    return;
+}
