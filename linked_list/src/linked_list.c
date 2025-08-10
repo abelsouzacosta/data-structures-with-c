@@ -178,3 +178,47 @@ void delete_from_tail(LinkedList *list) {
     free(current_tail);
   }
 }
+
+void delete_element(LinkedList *list, unsigned int reference) {
+  if (!list) {
+    fprintf(stderr, "No list was provided");
+    exit(EXIT_FAILURE);
+  }
+
+  // if the list is empty
+  if (!list->head)
+    return;
+
+  // the node to delete is the head
+  if (list->head->data == reference) {
+    delete_from_head(list);
+    return;
+  }
+
+  Node *current = list->head;
+  // traverse until before the node containing the reference
+  while (current != NULL && current->next != NULL &&
+         current->next->data != reference) {
+    current = current->next;
+  }
+
+  // if the reference is not on the list
+  if (current == NULL || current->next == NULL) {
+    return;
+  }
+
+  // node to delete is the tail
+  if (current->next == list->tail) {
+    delete_from_tail(list);
+    return;
+  }
+
+  // found the node
+  Node *node_to_delete = current->next;
+  // updates the current next pointer to
+  // the node to delete next pointer
+  current->next = node_to_delete->next;
+  // deletes the node from the memory
+  free(node_to_delete);
+  return;
+}
