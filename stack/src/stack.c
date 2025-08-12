@@ -55,3 +55,14 @@ int pop(struct Stack *stack) {
   return popped;
 }
 
+int peek(struct Stack *stack) {
+  if (!stack) {
+    fprintf(stderr, "No stack was provided");
+    exit(EXIT_FAILURE);
+  }
+
+  unsigned int peek = stack->elements[stack->top];
+
+  return peek;
+}
+
