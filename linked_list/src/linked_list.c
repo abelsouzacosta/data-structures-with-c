@@ -124,7 +124,7 @@ void delete_from_head(LinkedList *list) {
   }
 
   // list is empty
-  if (list->head == NULL)
+  if (!list->head)
     return;
 
   // list has only one element
@@ -222,3 +222,5 @@ void delete_element(LinkedList *list, unsigned int reference) {
   free(node_to_delete);
   return;
 }
+
+void reverse_list(LinkedList *list) {}
