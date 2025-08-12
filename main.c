@@ -1,24 +1,33 @@
-#include "stack/headers/stack.h"
+#include "linked_list/headers/linked_list.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(int argc, char *argv[]) {
-  Stack stack;
-  initialize_stack(&stack);
+  LinkedList *list = malloc(sizeof(LinkedList));
 
-  push(&stack, 1);
-  push(&stack, 30);
-  push(&stack, 23);
-  push(&stack, 14);
+  insert_at_head(list, 10);
+  insert_at_head(list, 20);
+  insert_at_head(list, 30);
+  insert_at_head(list, 40);
+  insert_at_head(list, 50);
+  insert_at_tail(list, 60);
+  insert_at_tail(list, 70);
+  insert_at_tail(list, 100);
+  insert_at_head(list, 200);
 
-  print_stack(&stack);
+  insert_after_element(list, 30, 300);
+  insert_after_element(list, 100, 10000);
 
-  printf("The element at the top is: %u\n", peek(&stack));
+  print_list(list);
+  printf("\nThe tail of the list is %u\n", get_tail(list));
+  printf("\nThe head of the list is %u\n", get_head(list));
 
-  printf("Popping %u", peek(&stack));
+  // reverses the list
+  reverse_list(list);
 
-  pop(&stack);
+  print_list(list);
+  printf("\nThe tail of the list is %u\n", get_tail(list));
+  printf("\nThe head of the list is %u\n", get_head(list));
 
-  print_stack(&stack);
-
-  return 0;
+  free(list);
 }

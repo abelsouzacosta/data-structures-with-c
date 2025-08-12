@@ -102,4 +102,7 @@ void print_array(int *array, int size);
  * @returns array with all elements of the original but element
  */
 int *pop(int *array, int size, int element);
+
+int *selection_sort(int *array, int size);
+
 #endif // !INT_ARRAY
