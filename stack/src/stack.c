@@ -36,3 +36,22 @@ void push(struct Stack *stack, unsigned int value) {
   printf("%d pushed into the stack\n", value);
   return;
 }
+
+int pop(struct Stack *stack) {
+  if (!stack) {
+    fprintf(stderr, "No stack was provided");
+    exit(EXIT_FAILURE);
+  }
+
+  if (is_empty(stack)) {
+    fprintf(stderr, "Stack empty");
+    exit(EXIT_FAILURE);
+  }
+
+  unsigned int popped = stack->elements[stack->top];
+  // shrinks the given array
+  stack->top -= 1;
+  // return the popped element
+  return popped;
+}
+
