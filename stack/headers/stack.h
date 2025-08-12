@@ -20,4 +20,6 @@ int pop(struct Stack *stack);
 
 int peek(struct Stack *stack);
 
+void print_stack(struct Stack *stack);
+
 #endif // !STACK
