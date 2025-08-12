@@ -223,4 +223,37 @@ void delete_element(LinkedList *list, unsigned int reference) {
   return;
 }
 
-void reverse_list(LinkedList *list) {}
+void reverse_list(LinkedList *list) {
+  if (!list) {
+    fprintf(stderr, "No list was provided");
+    return;
+  }
+  // check if the list is empty
+  if (!list->head)
+    return;
+
+  // check if there are only one element within the list
+  if (list->head == list->tail)
+    return;
+
+  Node *previous = NULL;
+  Node *current = list->head;
+  Node *next = NULL;
+  Node *old_head =
+      list->head; // keeps track of the old head to update as a the tail later
+
+  while (current != NULL) {
+    // stores the next element
+    next = current->next;
+    // updates the next pointer of the node to its previous position
+    current->next = previous;
+    // move on
+    previous = current;
+    current = next;
+  }
+
+  list->head = previous;
+  list->tail = old_head;
+
+  return;
+}
