@@ -10,4 +10,8 @@ typedef struct Stack {
 
 void initialize_stack(struct Stack *stack);
 
+bool is_empty(struct Stack *stack);
+
+bool is_full(struct Stack *stack);
+
 #endif // !STACK
