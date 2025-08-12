@@ -16,4 +16,6 @@ bool is_full(struct Stack *stack);
 
 void push(struct Stack *stack, unsigned int value);
 
+int pop(struct Stack *stack);
+
 #endif // !STACK
