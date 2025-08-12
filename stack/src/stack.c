@@ -31,3 +31,8 @@ void push(struct Stack *stack, unsigned int value) {
     return;
   }
 
+  // top stores the last element inserted within the array
+  stack->elements[stack->top += 1] = value;
+  printf("%d pushed into the stack\n", value);
+  return;
+}
