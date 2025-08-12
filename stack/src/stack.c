@@ -12,3 +12,9 @@
  * @param *stack reference to the stack
  */
 void initialize_stack(struct Stack *stack) { stack->top = -1; }
+
+bool is_empty(struct Stack *stack) { return stack->top <= 0 ? true : false; }
+
+bool is_full(struct Stack *stack) {
+  return stack->top == STACK_MAX_SIZE ? true : false;
+}
