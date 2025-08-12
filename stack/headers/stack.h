@@ -8,4 +8,6 @@ typedef struct Stack {
   unsigned int elements[STACK_MAX_SIZE];
 } Stack;
 
+void initialize_stack(struct Stack *stack);
+
 #endif // !STACK
