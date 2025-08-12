@@ -36,4 +36,6 @@ void delete_from_tail(LinkedList *list);
 
 void delete_element(LinkedList *list, unsigned int reference);
 
+void reverse_list(LinkedList *list);
+
 #endif
