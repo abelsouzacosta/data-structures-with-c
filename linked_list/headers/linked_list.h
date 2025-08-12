@@ -34,4 +34,6 @@ void delete_from_head(LinkedList *list);
 
 void delete_from_tail(LinkedList *list);
 
+void delete_element(LinkedList *list, unsigned int reference);
+
 #endif
