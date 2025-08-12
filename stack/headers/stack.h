@@ -3,6 +3,8 @@
 
 #define STACK_MAX_SIZE 100
 
+#include <stdbool.h>
+
 typedef struct Stack {
   unsigned int top;
   unsigned int elements[STACK_MAX_SIZE];
