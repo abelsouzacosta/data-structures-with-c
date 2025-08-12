@@ -14,4 +14,6 @@ bool is_empty(struct Stack *stack);
 
 bool is_full(struct Stack *stack);
 
+void push(struct Stack *stack, unsigned int value);
+
 #endif // !STACK
