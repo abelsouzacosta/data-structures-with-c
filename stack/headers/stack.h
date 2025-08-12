@@ -18,4 +18,6 @@ void push(struct Stack *stack, unsigned int value);
 
 int pop(struct Stack *stack);
 
+int peek(struct Stack *stack);
+
 #endif // !STACK
