@@ -66,3 +66,21 @@ int peek(struct Stack *stack) {
   return peek;
 }
 
+void print_stack(struct Stack *stack) {
+  if (!stack) {
+    fprintf(stderr, "No stack was provided");
+    exit(EXIT_FAILURE);
+  }
+
+  if (is_empty(stack)) {
+    fprintf(stderr, "Stack empty");
+    exit(EXIT_FAILURE);
+  }
+
+  printf("\n");
+  for (unsigned int counter = 0; counter <= stack->top; counter += 1) {
+    printf("|%u|", stack->elements[counter]);
+  }
+  printf("\n");
+  return;
+}
