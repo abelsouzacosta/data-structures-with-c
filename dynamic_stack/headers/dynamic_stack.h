@@ -11,4 +11,6 @@ typedef struct DStack {
 
 DStack initialize_stack(void);
 
+void push(DStack *stack, unsigned int value);
+
 #endif // !DYNAMIC_STACK
