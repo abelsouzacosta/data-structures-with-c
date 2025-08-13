@@ -13,4 +13,6 @@ DStack initialize_stack(void);
 
 void push(DStack *stack, unsigned int value);
 
+unsigned int pop(DStack *stack);
+
 #endif // !DYNAMIC_STACK
