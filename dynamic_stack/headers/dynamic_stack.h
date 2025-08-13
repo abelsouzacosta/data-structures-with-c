@@ -9,4 +9,6 @@ typedef struct DStack {
   LinkedList *elements;
 } DStack;
 
+DStack initialize_stack(void);
+
 #endif // !DYNAMIC_STACK
