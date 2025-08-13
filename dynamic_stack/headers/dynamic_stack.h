@@ -15,4 +15,6 @@ void push(DStack *stack, unsigned int value);
 
 unsigned int pop(DStack *stack);
 
+unsigned int peek(DStack *stack);
+
 #endif // !DYNAMIC_STACK
