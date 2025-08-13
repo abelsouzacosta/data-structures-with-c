@@ -17,4 +17,6 @@ unsigned int pop(DStack *stack);
 
 unsigned int peek(DStack *stack);
 
+bool is_empty(DStack *stack);
+
 #endif // !DYNAMIC_STACK
