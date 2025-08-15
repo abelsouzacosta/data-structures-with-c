@@ -59,3 +59,16 @@ unsigned int pop(DStack *stack) {
   return popped;
 }
 
+unsigned int peek(DStack *stack) {
+  if (!stack) {
+    fprintf(stderr, "No stack was provided");
+    exit(EXIT_FAILURE);
+  }
+
+  // stores the data of the node at the head
+  unsigned int peek = stack->elements->head->data;
+
+  // return the value no need to update the top
+  return peek;
+}
+
