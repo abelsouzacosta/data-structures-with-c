@@ -38,3 +38,24 @@ void push(DStack *stack, unsigned int value) {
   return;
 }
 
+unsigned int pop(DStack *stack) {
+  if (!stack) {
+    fprintf(stderr, "No stack was provided");
+    exit(EXIT_FAILURE);
+  }
+
+  // if the list is empty then do nothing
+  if (is_empty(stack))
+    exit(EXIT_FAILURE);
+
+  // stores the item to be removed from the stack (and the list)
+  unsigned int popped = stack->elements->head->data;
+  // removes the element from the head of the linked list
+  delete_from_head(stack->elements);
+  // updates the top of the head
+  stack->top = stack->elements->head;
+
+  // return the popped element
+  return popped;
+}
+
