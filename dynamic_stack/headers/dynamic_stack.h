@@ -19,4 +19,6 @@ unsigned int peek(DStack *stack);
 
 bool is_empty(DStack *stack);
 
+void print_stack(DStack *stack);
+
 #endif // !DYNAMIC_STACK
