@@ -72,3 +72,13 @@ unsigned int peek(DStack *stack) {
   return peek;
 }
 
+void print_stack(DStack *stack) {
+  if (stack->top != NULL && stack->elements != NULL) {
+    Node *current = stack->elements->head;
+    while (current != NULL) {
+      printf("%u\n", current->data);
+      current = current->next;
+    }
+  }
+  return;
+}
