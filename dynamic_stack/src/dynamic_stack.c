@@ -20,3 +20,6 @@ DStack *initialize_stack(void) {
   return stack;
 }
 
+bool is_empty(DStack *stack) {
+  return stack->top == NULL || stack->elements->head == NULL ? true : false;
+}
