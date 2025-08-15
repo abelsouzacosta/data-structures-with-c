@@ -9,7 +9,7 @@ typedef struct DStack {
   LinkedList *elements;
 } DStack;
 
-DStack initialize_stack(void);
+DStack *initialize_stack(void);
 
 void push(DStack *stack, unsigned int value);
 
