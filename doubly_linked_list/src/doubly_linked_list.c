@@ -200,6 +200,40 @@ void delete_element(DoublyLinkedList *list, unsigned int reference) {
   free(current);
 }
 
+void delete_all_occurrences(DoublyLinkedList *list, unsigned int reference) {
+  if (!list) {
+    fprintf(stderr, "List not provided");
+    return;
+  }
+  if (is_list_empty(list)) {
+    fprintf(stderr, "Empty list");
+    return;
+  }
+
+  // list have only one element
+  if (list->head == list->tail) {
+    delete_at_head(list);
+    return;
+  }
+
+  Node *current = list->head;
+  while (current != NULL) {
+    if (current->data == reference) {
+      Node *node_previous = current->previous;
+      Node *node_next = current->next;
+      node_previous->next = node_next;
+      node_next->previous = node_previous;
+      free(current);
+    }
+    current = current->next;
+  }
+
+  if (current == NULL) {
+    fprintf(stderr, "Reference not found in the list");
+    return;
+  }
+}
+
 void print_list(DoublyLinkedList *list) {
   if (!list) {
     perror("List not provided");
