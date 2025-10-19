@@ -25,6 +25,8 @@ void insert_at_tail(DoublyLinkedList *list, unsigned int data);
 void insert_after_element(DoublyLinkedList *list, unsigned int reference,
                           unsigned int data);
 
+void delete_at_head(DoublyLinkedList *list);
+
 bool is_list_empty(DoublyLinkedList *list);
 
 void print_list(DoublyLinkedList *list);
