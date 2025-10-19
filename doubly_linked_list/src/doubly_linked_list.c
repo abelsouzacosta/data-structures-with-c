@@ -28,6 +28,8 @@ DoublyLinkedList *init_list(void) {
   return list;
 }
 
+bool is_list_empty(DoublyLinkedList *list) { return list->head == NULL; }
+
 void insert_at_head(DoublyLinkedList *list, unsigned int data) {
   if (!list) {
     perror("No list provided");
