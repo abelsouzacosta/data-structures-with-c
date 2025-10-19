@@ -14,6 +14,8 @@ typedef struct DoublyLinkedList {
 
 DoublyLinkedList *init_list(void);
 
+Node *create_node(unsigned int data);
+
 void insert_at_head(DoublyLinkedList *list, unsigned int data);
 
 
