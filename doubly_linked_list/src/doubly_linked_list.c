@@ -73,6 +73,47 @@ void insert_at_tail(DoublyLinkedList *list, unsigned int data) {
   list->tail = new_node;
 }
 
+void insert_after_element(DoublyLinkedList *list, unsigned int reference,
+                          unsigned int data) {
+  if (!list) {
+    perror("List not provided");
+    exit(EXIT_FAILURE);
+  }
+
+  if (is_list_empty(list)) {
+    insert_at_head(list, data);
+    return;
+  }
+
+  // reference is the tail of the list
+  if (list->tail && list->tail->data == reference) {
+    insert_at_tail(list, data);
+    return;
+  }
+
+  Node *current = list->head;
+  while (current != NULL && current->data != reference) {
+    current = current->next;
+  }
+
+  // check if the current is not NULL
+  if (!current) {
+    fprintf(stderr, "reference %u not found in the list", reference);
+    return;
+  }
+
+  Node *new_node = create_node(data);
+  new_node->next = current->next;
+  new_node->previous = current;
+  current->next = new_node;
+  // without the line below the 'next' reference will still
+  // pointing to the pointer at current
+  if (new_node->next != NULL)
+    new_node->next->previous = new_node;
+  else
+    list->tail = new_node;
+}
+
 void print_list(DoublyLinkedList *list) {
   if (!list) {
     perror("List not provided");
