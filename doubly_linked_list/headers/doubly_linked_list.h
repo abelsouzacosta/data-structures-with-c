@@ -12,5 +12,11 @@ typedef struct DoublyLinkedList {
   struct Node *tail;
 } DoublyLinkedList;
 
+DoublyLinkedList *init_list(void);
+
+void insert_at_head(DoublyLinkedList *list, unsigned int data);
+
+
+void print_list(DoublyLinkedList *list);
 
 #endif
