@@ -8,4 +8,10 @@ int main(int argc, char *argv[]) {
   insert_at_tail(list, 4);
   insert_after_element(list, 2, 10);
   print_list(list);
+  delete_at_head(list);
+  print_list(list);
+  delete_at_tail(list);
+  print_list(list);
+
+  return 0;
 }

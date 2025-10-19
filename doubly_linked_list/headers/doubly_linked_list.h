@@ -29,6 +29,8 @@ void delete_at_head(DoublyLinkedList *list);
 
 void delete_at_tail(DoublyLinkedList *list);
 
+void delete_element(DoublyLinkedList *list, unsigned int reference);
+
 bool is_list_empty(DoublyLinkedList *list);
 
 void print_list(DoublyLinkedList *list);
