@@ -50,3 +50,21 @@ void insert_at_head(DoublyLinkedList *list, unsigned int data) {
   return;
 }
 
+void insert_at_tail(DoublyLinkedList *list, unsigned int data) {
+  if (!list) {
+    perror("No list provided");
+    exit(EXIT_FAILURE);
+  }
+
+  Node *new_node = create_node(data);
+
+  // list is empty
+  if (list->head == NULL) {
+    insert_at_head(list, data);
+  }
+  Node *old_tail = list->tail;
+  new_node->previous = old_tail;
+  old_tail->next = new_node;
+  list->tail = new_node;
+}
+
