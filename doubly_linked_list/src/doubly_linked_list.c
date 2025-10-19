@@ -60,12 +60,13 @@ void insert_at_tail(DoublyLinkedList *list, unsigned int data) {
     exit(EXIT_FAILURE);
   }
 
-  Node *new_node = create_node(data);
-
   // list is empty
   if (list->head == NULL) {
     insert_at_head(list, data);
+    return;
   }
+
+  Node *new_node = create_node(data);
   Node *old_tail = list->tail;
   new_node->previous = old_tail;
   old_tail->next = new_node;
