@@ -32,7 +32,7 @@ bool is_list_empty(DoublyLinkedList *list) { return list->head == NULL; }
 
 void insert_at_head(DoublyLinkedList *list, unsigned int data) {
   if (!list) {
-    perror("No list provided");
+    perror("List not provided");
     exit(EXIT_FAILURE);
   }
 
@@ -56,7 +56,7 @@ void insert_at_head(DoublyLinkedList *list, unsigned int data) {
 
 void delete_at_head(DoublyLinkedList *list) {
   if (!list) {
-    perror("No list provided");
+    perror("List not provided");
     exit(EXIT_FAILURE);
   }
 
@@ -81,7 +81,7 @@ void delete_at_head(DoublyLinkedList *list) {
 
 void insert_at_tail(DoublyLinkedList *list, unsigned int data) {
   if (!list) {
-    perror("No list provided");
+    perror("List not provided");
     exit(EXIT_FAILURE);
   }
 
@@ -100,7 +100,7 @@ void insert_at_tail(DoublyLinkedList *list, unsigned int data) {
 
 void delete_at_tail(DoublyLinkedList *list) {
   if (!list) {
-    fprintf(stderr, "No list provided");
+    fprintf(stderr, "List not provided");
     return;
   }
 
