@@ -28,3 +28,25 @@ DoublyLinkedList *init_list(void) {
   return list;
 }
 
+void insert_at_head(DoublyLinkedList *list, unsigned int data) {
+  if (!list) {
+    perror("No list provided");
+    exit(EXIT_FAILURE);
+  }
+
+  // creates a new node
+  Node *new_node = create_node(data);
+
+  if (list->head == NULL) { // list is empty
+    list->head = new_node;
+    list->tail = new_node;
+    return;
+  }
+
+  // list is not empty
+  Node *old_head = list->head;
+  new_node->next = old_head;
+  list->head = new_node;
+  return;
+}
+
