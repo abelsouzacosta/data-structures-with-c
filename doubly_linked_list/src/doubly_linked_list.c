@@ -48,6 +48,8 @@ void insert_at_head(DoublyLinkedList *list, unsigned int data) {
   // list is not empty
   Node *old_head = list->head;
   new_node->next = old_head;
+  // updates the previous reference to the node at the head now
+  old_head->previous = new_node;
   list->head = new_node;
   return;
 }
