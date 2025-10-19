@@ -6,5 +6,6 @@ int main(int argc, char *argv[]) {
   insert_at_head(list, 2);
   insert_at_head(list, 1);
   insert_at_tail(list, 4);
+  insert_after_element(list, 2, 10);
   print_list(list);
 }
