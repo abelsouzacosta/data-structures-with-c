@@ -54,6 +54,31 @@ void insert_at_head(DoublyLinkedList *list, unsigned int data) {
   return;
 }
 
+void delete_at_head(DoublyLinkedList *list) {
+  if (!list) {
+    perror("No list provided");
+    exit(EXIT_FAILURE);
+  }
+
+  if (is_list_empty(list)) {
+    perror("Empty list");
+    exit(EXIT_FAILURE);
+  }
+
+  Node *old_head = list->head;
+
+  if (list->head->next) { // more than one element in the list
+    Node *new_head = list->head->next;
+    new_head->previous = NULL;
+    list->head = new_head;
+    free(old_head);
+  } else {
+    list->head = NULL;
+    list->tail = NULL;
+    free(old_head);
+  }
+}
+
 void insert_at_tail(DoublyLinkedList *list, unsigned int data) {
   if (!list) {
     perror("No list provided");
