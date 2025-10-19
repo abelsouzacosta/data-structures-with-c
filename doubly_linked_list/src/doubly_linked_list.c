@@ -15,3 +15,16 @@ Node *create_node(unsigned int data) {
   return new_node;
 }
 
+DoublyLinkedList *init_list(void) {
+  DoublyLinkedList *list = malloc(sizeof(DoublyLinkedList));
+
+  if (list == NULL) {
+    perror("Error allocating memory to the list");
+    exit(EXIT_FAILURE);
+  }
+  // initializing list references
+  list->head = NULL;
+  list->tail = NULL;
+  return list;
+}
+
