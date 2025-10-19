@@ -98,6 +98,29 @@ void insert_at_tail(DoublyLinkedList *list, unsigned int data) {
   list->tail = new_node;
 }
 
+void delete_at_tail(DoublyLinkedList *list) {
+  if (!list) {
+    fprintf(stderr, "No list provided");
+    return;
+  }
+
+  if (is_list_empty(list)) {
+    fprintf(stderr, "Empty list");
+    return;
+  }
+  // list has only one element
+  if (list->head == list->tail) {
+    free(list->head);
+    list->head = NULL;
+    list->tail = NULL;
+    return;
+  }
+  // list has more than one element
+  Node *old_tail = list->tail;
+  list->tail = old_tail->previous;
+  list->tail->next = NULL; // updates the next pointer of the tail
+  free(old_tail);
+}
 void insert_after_element(DoublyLinkedList *list, unsigned int reference,
                           unsigned int data) {
   if (!list) {
