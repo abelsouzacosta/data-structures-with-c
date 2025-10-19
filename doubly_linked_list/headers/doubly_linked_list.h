@@ -1,6 +1,8 @@
 #ifndef DOUBLY_LINKED_LIST
 #define DOUBLY_LINKED_LIST
 
+#include <stdbool.h>
+
 typedef struct Node {
   int data;
   struct Node *previous;
@@ -20,6 +22,8 @@ void insert_at_head(DoublyLinkedList *list, unsigned int data);
 
 void insert_at_tail(DoublyLinkedList *list, unsigned int data);
 
+
+bool is_list_empty(DoublyLinkedList *list);
 
 void print_list(DoublyLinkedList *list);
 
