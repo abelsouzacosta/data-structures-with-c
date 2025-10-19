@@ -1,4 +1,5 @@
 #include "../headers/doubly_linked_list.h"
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -209,26 +210,34 @@ void delete_all_occurrences(DoublyLinkedList *list, unsigned int reference) {
     fprintf(stderr, "Empty list");
     return;
   }
-
-  // list have only one element
-  if (list->head == list->tail) {
-    delete_at_head(list);
-    return;
-  }
-
+  bool found = false;
   Node *current = list->head;
   while (current != NULL) {
+    Node *next_node = current->next;
+
     if (current->data == reference) {
-      Node *node_previous = current->previous;
-      Node *node_next = current->next;
-      node_previous->next = node_next;
-      node_next->previous = node_previous;
+      found = true;
+
+      // updates the head with the next element
+      if (list->head == current)
+        list->head = current->next;
+
+      // updates the tail with the previous element
+      if (list->tail == current)
+        list->tail = current->previous;
+
+      // checks if the previous reference is not NULL
+      if (current->previous)
+        current->previous->next = current->next;
+      // checks if the next reference is not NULL
+      if (current->next)
+        current->next->previous = current->previous;
       free(current);
     }
-    current = current->next;
+    current = next_node; // moving forward in the list
   }
 
-  if (current == NULL) {
+  if (!found) {
     fprintf(stderr, "Reference not found in the list");
     return;
   }
