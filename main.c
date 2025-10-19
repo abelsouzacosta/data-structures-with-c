@@ -1,11 +1,10 @@
-#include "dynamic_stack/headers/dynamic_stack.h"
+#include "doubly_linked_list/headers/doubly_linked_list.h"
 
 int main(int argc, char *argv[]) {
-  DStack *stack = initialize_stack();
-  push(stack, 2);
-  push(stack, 3);
-  push(stack, 4);
-  push(stack, 6);
-
-  print_stack(stack);
+  DoublyLinkedList *list = init_list();
+  insert_at_head(list, 3);
+  insert_at_head(list, 2);
+  insert_at_head(list, 1);
+  insert_at_tail(list, 4);
+  print_list(list);
 }
