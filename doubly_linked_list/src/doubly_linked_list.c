@@ -127,8 +127,13 @@ void print_list(DoublyLinkedList *list) {
     printf("[]");
   }
 
+  printf("[");
   while (current != NULL) {
-    printf("%u <-> ", current->data);
+    printf("%u", current->data);
+    if (current->next) {
+      printf(" <-> ");
+    }
     current = current->next;
   }
+  printf("]\n");
 }
