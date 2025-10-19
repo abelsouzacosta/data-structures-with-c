@@ -12,6 +12,8 @@ int main(int argc, char *argv[]) {
   print_list(list);
   delete_at_tail(list);
   print_list(list);
+  delete_element(list, 10);
+  print_list(list);
 
   return 0;
 }
