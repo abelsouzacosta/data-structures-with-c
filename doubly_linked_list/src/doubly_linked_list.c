@@ -162,6 +162,44 @@ void insert_after_element(DoublyLinkedList *list, unsigned int reference,
     list->tail = new_node;
 }
 
+void delete_element(DoublyLinkedList *list, unsigned int reference) {
+  if (!list) {
+    fprintf(stderr, "List not provided");
+    return;
+  }
+  if (is_list_empty(list)) {
+    fprintf(stderr, "Empty list");
+    return;
+  }
+
+  // checks if the reference is the tail of the list
+  if (list->tail->data == reference) {
+    delete_at_tail(list);
+    return;
+  }
+  // checks if the reference is the head of the list
+  if (list->head->data == reference) {
+    delete_at_head(list);
+    return;
+  }
+
+  Node *current = list->head;
+  while (current != NULL && current->data != reference) {
+    current = current->next;
+  }
+
+  if (current == NULL) {
+    fprintf(stderr, "Reference was not found in the list");
+    return;
+  }
+
+  Node *node_previous = current->previous;
+  Node *node_next = current->next;
+  node_previous->next = node_next;
+  node_next->previous = node_previous;
+  free(current);
+}
+
 void print_list(DoublyLinkedList *list) {
   if (!list) {
     perror("List not provided");
