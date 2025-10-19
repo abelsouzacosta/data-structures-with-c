@@ -18,6 +18,8 @@ Node *create_node(unsigned int data);
 
 void insert_at_head(DoublyLinkedList *list, unsigned int data);
 
+void insert_at_tail(DoublyLinkedList *list, unsigned int data);
+
 
 void print_list(DoublyLinkedList *list);
 
