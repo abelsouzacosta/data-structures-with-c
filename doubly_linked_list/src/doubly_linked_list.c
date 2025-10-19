@@ -68,3 +68,21 @@ void insert_at_tail(DoublyLinkedList *list, unsigned int data) {
   list->tail = new_node;
 }
 
+void print_list(DoublyLinkedList *list) {
+  if (!list) {
+    perror("List not provided");
+    exit(EXIT_FAILURE);
+  }
+
+  Node *current = list->head;
+
+  // empty list
+  if (current == NULL) {
+    printf("[]");
+  }
+
+  while (current != NULL) {
+    printf("%u -> ", current->data);
+    current = current->next;
+  }
+}
