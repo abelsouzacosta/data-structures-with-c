@@ -37,3 +37,17 @@ void insert_at_head(CircularLinkedList *list, unsigned int data) {
   list->tail->next = list->head;
 }
 
+void print_list(CircularLinkedList *list) {
+  Node *current = list->head;
+
+  if (current == NULL) {
+    printf("[]");
+  }
+
+  printf("[");
+  do {
+    printf("%u ", current->data);
+    current = current->next;
+  } while (current != NULL && current != list->head);
+  printf("]");
+}
