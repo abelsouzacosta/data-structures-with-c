@@ -27,4 +27,6 @@ void delete_at_tail(CircularLinkedList *list);
 
 void delete_element(CircularLinkedList *list, unsigned int reference);
 
+void print_list(CircularLinkedList *list);
+
 #endif
