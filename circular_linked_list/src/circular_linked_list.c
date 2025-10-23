@@ -25,3 +25,15 @@ CircularLinkedList *init_list() {
   return list;
 }
 
+void insert_at_head(CircularLinkedList *list, unsigned int data) {
+  Node *new_node = create_node(data);
+  if (list->head == NULL) {
+    list->head = new_node;
+    list->tail = new_node;
+    new_node->next = new_node;
+  }
+  new_node->next = list->head;
+  list->head = new_node;
+  list->tail->next = list->head;
+}
+
