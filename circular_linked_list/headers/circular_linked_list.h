@@ -13,7 +13,7 @@ typedef struct CircularLinkedList {
 
 Node *create_node(unsigned int data);
 
-CircularLinkedList init_list();
+CircularLinkedList *init_list();
 
 void insert_at_head(CircularLinkedList *list, unsigned int data);
 
