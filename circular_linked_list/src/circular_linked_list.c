@@ -13,3 +13,15 @@ Node *create_node(unsigned int data) {
   return new_node;
 }
 
+CircularLinkedList *init_list() {
+  CircularLinkedList *list =
+      (CircularLinkedList *)malloc(sizeof(CircularLinkedList));
+  if (list == NULL) {
+    fprintf(stderr, "Error allocating memory to the list");
+    exit(EXIT_FAILURE);
+  }
+  list->head = NULL;
+  list->tail = NULL;
+  return list;
+}
+
