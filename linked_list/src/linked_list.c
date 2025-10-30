@@ -257,3 +257,22 @@ void reverse_list(LinkedList *list) {
 
   return;
 }
+
+void remove_duplicates(LinkedList *list) {
+  if (list->head == NULL || list->head->next == NULL) {
+    return;
+  }
+  Node *current = list->head;
+  Node *runner = NULL;
+  while (current != NULL) {
+    runner = current;
+    while (runner->next != NULL) {
+      if (runner->next->data == current->data) {
+        runner->next = runner->next->next;
+      } else {
+        runner = runner->next;
+      }
+      current = current->next; // moves forward in the list
+    }
+  }
+}
