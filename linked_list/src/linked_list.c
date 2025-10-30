@@ -92,13 +92,13 @@ void print_list(LinkedList *list) {
   Node *current = list->head;
 
   while (current != NULL) {
-    printf("%u -> ", current->data);
+    if (current->next == NULL) {
+      printf("%d\n", current->data);
+    } else {
+      printf("%d -> ", current->data);
+    }
     current = current->next;
   }
-
-  // if the list is empty or at the end
-  if (current == NULL)
-    printf("NULL");
 }
 
 int get_tail(LinkedList *list) {
