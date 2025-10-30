@@ -88,7 +88,6 @@ void print_list(LinkedList *list) {
     fprintf(stderr, "No list was provided to print");
     exit(EXIT_FAILURE);
   }
-
   Node *current = list->head;
   while (current != NULL) {
     if (current->next == NULL) {
