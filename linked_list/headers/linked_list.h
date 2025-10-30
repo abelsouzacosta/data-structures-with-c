@@ -38,4 +38,6 @@ void delete_element(LinkedList *list, unsigned int reference);
 
 void reverse_list(LinkedList *list);
 
+void remove_duplicates(LinkedList *list);
+
 #endif
