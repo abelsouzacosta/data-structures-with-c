@@ -90,7 +90,6 @@ void print_list(LinkedList *list) {
   }
 
   Node *current = list->head;
-
   while (current != NULL) {
     if (current->next == NULL) {
       printf("%d\n", current->data);
