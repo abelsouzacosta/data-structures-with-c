@@ -1,6 +1,7 @@
 #ifndef LINKED_LIST
 #define LINKED_LIST
 
+#include <stdint.h>
 typedef struct Node {
   unsigned int data;
   struct Node *next;
@@ -37,6 +38,8 @@ void delete_from_tail(LinkedList *list);
 void delete_element(LinkedList *list, unsigned int reference);
 
 void reverse_list(LinkedList *list);
+
+void reverse_first(LinkedList *list, uint16_t positions);
 
 void remove_duplicates(LinkedList *list);
 
