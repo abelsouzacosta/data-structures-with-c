@@ -1,4 +1,5 @@
 #include "../headers/linked_list.h"
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -254,6 +255,36 @@ void reverse_list(LinkedList *list) {
   list->tail = old_head;
 
   return;
+}
+
+void reverse_first(LinkedList *list, uint16_t positions) {
+  if (!list) {
+    fprintf(stderr, "No list was provided");
+    return;
+  }
+
+  if (list->head == NULL || list->head->next == NULL)
+    return;
+
+  Node *current = list->head;
+  Node *blockTail = list->head;
+  Node *next = NULL;
+  Node *previous = NULL;
+  uint16_t accumulator = 0;
+
+  while (current != NULL && accumulator < positions) {
+    next = current->next;
+    current->next = previous;
+    previous = current;
+    current = next;
+    ++accumulator;
+  }
+
+  if (next != NULL) {
+    blockTail->next = next;
+  }
+
+  list->head = previous;
 }
 
 void remove_duplicates(LinkedList *list) {
