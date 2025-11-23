@@ -8,9 +8,7 @@ int main(int argc, char *argv[]) {
   insert_at_tail(list, 4);
   insert_at_tail(list, 5);
   print_list(list);
-  reverse_list(list);
-  print_list(list);
-  reverse_first(list, 3);
+  remove_duplicates(list);
   print_list(list);
   return 0;
 }
