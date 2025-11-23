@@ -291,17 +291,24 @@ void remove_duplicates(LinkedList *list) {
   if (list->head == NULL || list->head->next == NULL) {
     return;
   }
+
+  // two pointer
   Node *current = list->head;
-  Node *runner = NULL;
   while (current != NULL) {
-    runner = current;
+    Node *runner = current;
     while (runner->next != NULL) {
-      if (runner->next->data == current->data) {
-        runner->next = runner->next->next;
+      if (current->data == runner->next->data) {
+        // saves the duplicated node to be freed
+        Node *duplicated_node = runner->next;
+        // moves forward
+        runner->next = duplicated_node->next;
+
+        // calls free for the duplicated node
+        free(duplicated_node);
       } else {
         runner = runner->next;
       }
-      current = current->next; // moves forward in the list
     }
+    current = current->next;
   }
 }
