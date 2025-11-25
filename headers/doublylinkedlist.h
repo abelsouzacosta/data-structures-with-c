@@ -51,4 +51,46 @@ DoublyLinkedList *create_list(void);
  */
 Node *init_node(uint data);
 
+/**
+ * insert_at_head() - inserts a new node at the head of the list
+ *
+ * @list: a pointer to a doubly linked list
+ * @data: a uint value
+ *
+ * Return: void
+ */
+void insert_at_head(DoublyLinkedList *list, uint data);
+
+/**
+ * insert_at_tail() - inserts a new node at the tail of the list
+ *
+ * @list: a pointer to a doubly linked list
+ * @data: a uint value
+ */
+void insert_at_tail(DoublyLinkedList *list, uint data);
+
+/**
+ * insert_before() - inserts a new node before the first node that holds the
+ * reference value
+ *
+ * @list: a pointer to a doubly linked list
+ * @reference: a reference value that will be used in the comparison
+ * @data: a uint value
+ *
+ * Return: void
+ */
+void insert_before(DoublyLinkedList *list, uint reference, uint data);
+
+/**
+ * insert_after() - inserts a new node after the first node that holds the
+ * reference value
+ *
+ * @list: a pointer to a doubly linked list
+ * @reference: a reference value that will be used in the comparison
+ * @data: a uint value
+ *
+ * Return: void
+ */
+void insert_after(DoublyLinkedList *list, uint reference, uint data);
+
 #endif // !DOUBLYLINKEDLIST
