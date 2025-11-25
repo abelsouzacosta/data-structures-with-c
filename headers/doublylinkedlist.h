@@ -42,4 +42,13 @@ bool is_unary(DoublyLinkedList *list);
  */
 DoublyLinkedList *create_list(void);
 
+/**
+ * init_node() - allocates a new node
+ *
+ * @data: the value carried by the node
+ *
+ * Return: a malloced node with previous and next pointing to NULL positions
+ */
+Node *init_node(uint data);
+
 #endif // !DOUBLYLINKEDLIST
