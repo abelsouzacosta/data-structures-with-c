@@ -35,4 +35,11 @@ bool is_empty(DoublyLinkedList *list);
  */
 bool is_unary(DoublyLinkedList *list);
 
+/**
+ * create_list() - allocates a new doubly linked list
+ *
+ * Return: a malloced doubly linked list
+ */
+DoublyLinkedList *create_list(void);
+
 #endif // !DOUBLYLINKEDLIST
