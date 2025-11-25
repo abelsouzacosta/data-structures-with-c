@@ -245,6 +245,34 @@ void delete_all_occurrences(DoublyLinkedList *list, unsigned int reference) {
   }
 }
 
+void reverse(DoublyLinkedList *list) {
+  if (!list) {
+    printf("No list was provided");
+    return;
+  }
+
+  if (is_list_empty(list) || is_list_unary(list)) {
+    return;
+  }
+
+  Node *current = list->head;
+  Node *old_head = list->head;
+  Node *next = NULL;
+  Node *previous = NULL;
+  while (current != NULL) {
+    next = current->next; // stores the next node
+    // swaps the nodes references withn the list
+    current->next = previous;
+    current->previous = next;
+    previous = current;
+    current = next; // moves forward in the list
+  }
+
+  list->head = previous;
+  list->tail = old_head;
+  return;
+}
+
 void print_list(DoublyLinkedList *list) {
   if (!list) {
     perror("List not provided");

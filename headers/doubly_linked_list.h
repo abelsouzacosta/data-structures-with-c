@@ -41,4 +41,6 @@ bool is_list_unary(DoublyLinkedList *list);
 
 void print_list(DoublyLinkedList *list);
 
+void reverse(DoublyLinkedList *list);
+
 #endif
