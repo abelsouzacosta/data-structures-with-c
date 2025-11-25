@@ -93,4 +93,44 @@ void insert_before(DoublyLinkedList *list, uint reference, uint data);
  */
 void insert_after(DoublyLinkedList *list, uint reference, uint data);
 
+/**
+ * delete_at_head() - frees the malloced node at the head of the list and sets
+ * its next reference as the new head
+ *
+ * @list: a pointer to a doubly linked list
+ *
+ * Return: void
+ */
+void delete_at_head(DoublyLinkedList *list);
+
+/**
+ * delete_at_tail() - frees the malloced node at the tail of the list and sets
+ * its previous reference as the new tail
+ *
+ * @list: a pointer to a doubly linked list
+ *
+ * Return: void
+ */
+void delete_at_tail(DoublyLinkedList *list);
+
+/**
+ * delete_element() - frees the first node that holds the reference given
+ *
+ * @list: a pointer to a doubly linked list
+ * @reference: a reference value that will be used in the comparison
+ *
+ * Return: void
+ */
+void delete_element(DoublyLinkedList *list, uint reference);
+
+/**
+ * delete_all_references() - frees all the nodes that holds the reference given
+ *
+ * @list: a pointer to a doubly linked list
+ * @reference: a reference value that will be used in the comparison
+ *
+ * Return: void
+ */
+void delete_all_references(DoublyLinkedList *list, uint reference);
+
 #endif // !DOUBLYLINKEDLIST
