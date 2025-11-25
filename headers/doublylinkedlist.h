@@ -184,4 +184,13 @@ Node *get_node_at_position(DoublyLinkedList *list, uint position);
 void swap_nodes(DoublyLinkedList *list, uint first_node_position,
                 uint second_node_position);
 
+/**
+ * print_list() - print the linked list
+ *
+ * @list: a pointer to the doubly linked list
+ *
+ * Return: void
+ */
+void print_list(DoublyLinkedList *list);
+
 #endif // !DOUBLYLINKEDLIST
