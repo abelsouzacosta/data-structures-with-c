@@ -37,6 +37,8 @@ void delete_adjacent_duplicates(DoublyLinkedList *list);
 
 bool is_list_empty(DoublyLinkedList *list);
 
+bool is_list_unary(DoublyLinkedList *list);
+
 void print_list(DoublyLinkedList *list);
 
 #endif
