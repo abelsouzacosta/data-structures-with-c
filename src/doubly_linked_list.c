@@ -31,6 +31,8 @@ DoublyLinkedList *init_list(void) {
 
 bool is_list_empty(DoublyLinkedList *list) { return list->head == NULL; }
 
+bool is_list_unary(DoublyLinkedList *list) { return list->head->next == NULL; }
+
 void insert_at_head(DoublyLinkedList *list, unsigned int data) {
   if (!list) {
     perror("List not provided");
