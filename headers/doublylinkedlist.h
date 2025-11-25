@@ -133,4 +133,30 @@ void delete_element(DoublyLinkedList *list, uint reference);
  */
 void delete_all_references(DoublyLinkedList *list, uint reference);
 
+/**
+ * reverse() - reverse the list making swapping between head and tail
+ *
+ * @list: a pointer to a doubly linked list
+ *
+ * Return: void
+ */
+void reverse(DoublyLinkedList *list);
+
+/**
+ * reverse_first() - reverse the first n positions given
+ *
+ * @list: a pointer to a doubly linked list
+ * @positions: the number of positions to be reverted
+ *
+ * Return: void
+ */
+void reverse_first(DoublyLinkedList *list, uint positions);
+
+/**
+ * swap() - will swap the two first elements
+ *
+ * @list: a pointer to a doubly linked list
+ *
+ * Return: void
+ */
 #endif // !DOUBLYLINKEDLIST
