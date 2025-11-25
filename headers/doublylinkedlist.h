@@ -162,6 +162,17 @@ void reverse_first(DoublyLinkedList *list, uint positions);
 void swap(DoublyLinkedList *list);
 
 /**
+ * get_node_at_position() - returns a pointer to a node in a specific position
+ * of the list
+ *
+ * @list: a pointer to a doubly linked list
+ * @position: the position of the node in the list
+ *
+ * Return: a pointer to the node in the given position
+ */
+Node *get_node_at_position(DoublyLinkedList *list, uint position);
+
+/**
  * swap_nodes() - will swap nodes at the positions given
  *
  * @list: a pointer to a doubly linked list
