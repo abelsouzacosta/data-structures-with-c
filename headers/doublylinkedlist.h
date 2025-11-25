@@ -159,4 +159,18 @@ void reverse_first(DoublyLinkedList *list, uint positions);
  *
  * Return: void
  */
+void swap(DoublyLinkedList *list);
+
+/**
+ * swap_nodes() - will swap nodes at the positions given
+ *
+ * @list: a pointer to a doubly linked list
+ * @first_node_position: the position of the first node
+ * @second_node_position: the position of the second node
+ *
+ * Return: void
+ */
+void swap_nodes(DoublyLinkedList *list, uint first_node_position,
+                uint second_node_position);
+
 #endif // !DOUBLYLINKEDLIST
