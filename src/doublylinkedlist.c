@@ -68,3 +68,25 @@ void insert_at_tail(DoublyLinkedList *list, uint data) {
   }
   insert_at_empty_list(list, node);
 }
+
+void print_list(DoublyLinkedList *list) {
+  check_list(list);
+  if (is_empty(list)) {
+    printf("[]");
+    return;
+  }
+  Node *runner = list->head;
+
+  printf("[");
+  while (runner != NULL) {
+    if (runner->next == NULL) {
+      printf("%u", runner->data);
+    } else {
+      printf("%u <-> ", runner->data);
+    }
+
+    runner = runner->next;
+  }
+  printf("]\n");
+  return;
+}
