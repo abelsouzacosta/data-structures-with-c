@@ -31,3 +31,20 @@ Node *init_node(uint data) {
   new_node->data = data;
   return new_node;
 }
+
+void insert_at_head(DoublyLinkedList *list, uint data) {
+  check_list(list);
+  Node *node = init_node(data);
+  // There is already an element in the list
+  if (list->head != NULL) {
+    Node *old_head = list->head;
+    node->next = old_head;
+    old_head->previous = node;
+    list->head = node;
+    return;
+  }
+  // There is no element in the list
+  list->head = node;
+  list->tail = node;
+  return;
+}
