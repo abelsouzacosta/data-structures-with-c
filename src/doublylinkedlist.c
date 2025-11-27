@@ -63,6 +63,7 @@ void delete_at_head(DoublyLinkedList *list) {
   }
   Node *node_to_delete = list->head;
   list->head = node_to_delete->next;
+  list->head->previous = NULL;
   free(node_to_delete);
   return;
 }
