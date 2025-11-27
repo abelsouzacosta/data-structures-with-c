@@ -48,3 +48,17 @@ void insert_at_head(DoublyLinkedList *list, uint data) {
   list->tail = node;
   return;
 }
+
+void insert_at_tail(DoublyLinkedList *list, uint data) {
+  check_list(list);
+  Node *node = init_node(data);
+  if (list->head != NULL) {
+    Node *old_tail = list->tail;
+    node->previous = old_tail;
+    old_tail->next = node;
+    list->tail = node;
+    return;
+  }
+  list->head = node;
+  list->tail = node;
+}
