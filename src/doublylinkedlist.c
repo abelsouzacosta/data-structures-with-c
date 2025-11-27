@@ -46,7 +46,7 @@ void insert_at_head(DoublyLinkedList *list, uint data) {
   check_list(list);
   Node *node = init_node(data);
   // There is already an element in the list
-  if (list->head != NULL) {
+  if (!is_empty(list)) {
     Node *old_head = list->head;
     node->next = old_head;
     old_head->previous = node;
@@ -59,7 +59,7 @@ void insert_at_head(DoublyLinkedList *list, uint data) {
 void insert_at_tail(DoublyLinkedList *list, uint data) {
   check_list(list);
   Node *node = init_node(data);
-  if (list->head != NULL) {
+  if (!is_empty(list)) {
     Node *old_tail = list->tail;
     node->previous = old_tail;
     old_tail->next = node;
