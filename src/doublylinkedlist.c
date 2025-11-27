@@ -13,3 +13,14 @@ DoublyLinkedList *create_list() {
   return list;
 }
 
+Node *init_node(uint data) {
+  Node *new_node = (Node *)malloc(sizeof(Node));
+  if (new_node == NULL) {
+    printf("There was an error trying to create a node");
+    return NULL;
+  }
+  new_node->previous = NULL;
+  new_node->next = NULL;
+  new_node->data = data;
+  return new_node;
+}
