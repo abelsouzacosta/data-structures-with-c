@@ -6,15 +6,15 @@
 
 // node structure for a doubly linked list
 typedef struct Node {
-  Node *previous;
-  Node *next;
+  struct Node *previous;
+  struct Node *next;
   uint data;
 } Node;
 
 // doubly linked list structure
 typedef struct DoublyLinkedList {
-  Node *head;
-  Node *tail;
+  struct Node *head;
+  struct Node *tail;
 } DoublyLinkedList;
 
 /**
