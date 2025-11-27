@@ -18,6 +18,16 @@ typedef struct DoublyLinkedList {
 } DoublyLinkedList;
 
 /**
+ * check_list() - if the list pointer is null then throws an error and then
+ * leaves
+ *
+ * @list: a pointer to a doubly linked list
+ *
+ * Return: void
+ */
+void check_list(DoublyLinkedList *list);
+
+/**
  * is_empty() - tells if a list is empty
  *
  * @list: a pointer to a doubly linked list

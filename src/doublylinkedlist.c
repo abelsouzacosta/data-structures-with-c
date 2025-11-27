@@ -13,6 +13,13 @@ DoublyLinkedList *create_list() {
   return list;
 }
 
+void check_list(DoublyLinkedList *list) {
+  if (list == NULL) {
+    perror("Probably there was an error trying to allocate the list");
+    exit(1);
+  }
+}
+
 Node *init_node(uint data) {
   Node *new_node = (Node *)malloc(sizeof(Node));
   if (new_node == NULL) {
