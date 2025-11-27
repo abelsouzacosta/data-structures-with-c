@@ -56,6 +56,17 @@ void insert_at_head(DoublyLinkedList *list, uint data) {
   insert_at_empty_list(list, node);
 }
 
+void delete_at_head(DoublyLinkedList *list) {
+  check_list(list);
+  if (is_empty(list)) {
+    return;
+  }
+  Node *node_to_delete = list->head;
+  list->head = node_to_delete->next;
+  free(node_to_delete);
+  return;
+}
+
 void insert_at_tail(DoublyLinkedList *list, uint data) {
   check_list(list);
   Node *node = init_node(data);
