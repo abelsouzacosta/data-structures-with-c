@@ -32,6 +32,10 @@ Node *init_node(uint data) {
   return new_node;
 }
 
+bool is_empty(DoublyLinkedList *list) {
+  return list->head == NULL ? true : false;
+}
+
 void insert_at_empty_list(DoublyLinkedList *list, Node *node) {
   list->head = node;
   list->tail = node;
