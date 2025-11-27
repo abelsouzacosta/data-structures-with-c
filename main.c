@@ -20,5 +20,7 @@ int main(int argc, char *argv[]) {
   insert_at_head(list, 15);
   insert_at_head(list, 16);
   print_list(list);
+  delete_at_head(list);
+  print_list(list);
   return 0;
 }
