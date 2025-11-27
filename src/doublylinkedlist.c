@@ -32,6 +32,12 @@ Node *init_node(uint data) {
   return new_node;
 }
 
+void insert_at_empty_list(DoublyLinkedList *list, Node *node) {
+  list->head = node;
+  list->tail = node;
+  return;
+}
+
 void insert_at_head(DoublyLinkedList *list, uint data) {
   check_list(list);
   Node *node = init_node(data);
@@ -43,10 +49,7 @@ void insert_at_head(DoublyLinkedList *list, uint data) {
     list->head = node;
     return;
   }
-  // There is no element in the list
-  list->head = node;
-  list->tail = node;
-  return;
+  insert_at_empty_list(list, node);
 }
 
 void insert_at_tail(DoublyLinkedList *list, uint data) {
@@ -59,6 +62,5 @@ void insert_at_tail(DoublyLinkedList *list, uint data) {
     list->tail = node;
     return;
   }
-  list->head = node;
-  list->tail = node;
+  insert_at_empty_list(list, node);
 }

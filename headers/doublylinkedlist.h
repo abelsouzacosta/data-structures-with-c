@@ -62,6 +62,17 @@ DoublyLinkedList *create_list(void);
 Node *init_node(uint data);
 
 /**
+ * insert_at_empty_list() - insert a node in a empty list by initializing head
+ * and tail
+ *
+ * @list: a pointer to a doubly linked list
+ * @node: a pointer to a node
+ *
+ * Return: void
+ */
+void insert_at_empty_list(DoublyLinkedList *list, Node *node);
+
+/**
  * insert_at_head() - inserts a new node at the head of the list
  *
  * @list: a pointer to a doubly linked list
