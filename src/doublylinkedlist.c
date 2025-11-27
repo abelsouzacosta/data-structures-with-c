@@ -80,6 +80,18 @@ void insert_at_tail(DoublyLinkedList *list, uint data) {
   insert_at_empty_list(list, node);
 }
 
+void delete_at_tail(DoublyLinkedList *list) {
+  check_list(list);
+  if (is_empty(list)) {
+    return;
+  }
+  Node *node_to_delete = list->tail;
+  list->tail = node_to_delete->previous;
+  list->tail->next = NULL;
+  free(node_to_delete);
+  return;
+}
+
 void print_list(DoublyLinkedList *list) {
   check_list(list);
   if (is_empty(list)) {
