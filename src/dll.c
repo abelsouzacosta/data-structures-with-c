@@ -91,6 +91,23 @@ void delete_at_tail(Dll *list) {
   return;
 }
 
+void insert_before(Dll *list, uint reference, uint data) {
+  check_list(list);
+  if (is_empty(list)) {
+    return;
+  }
+  Node *runner = list->head;
+  while (runner != NULL && runner->next->data != reference) {
+    runner = runner->next;
+  }
+  Node *new_node = init_node(data);
+  Node *next = runner->next;
+  new_node->previous = runner;
+  new_node->next = next;
+  runner->next = new_node;
+  return;
+}
+
 void print_list(Dll *list) {
   check_list(list);
   if (is_empty(list)) {
