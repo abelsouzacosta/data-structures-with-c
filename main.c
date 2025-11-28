@@ -1,7 +1,7 @@
-#include "headers/doublylinkedlist.h"
+#include "headers/dll.h"
 
 int main(int argc, char *argv[]) {
-  DoublyLinkedList *list = create_list();
+  Dll *list = create_list();
 
   insert_at_head(list, 1);
   insert_at_head(list, 2);
