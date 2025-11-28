@@ -1,4 +1,5 @@
 #include "headers/dll.h"
+#include <stdlib.h>
 
 int main(int argc, char *argv[]) {
   Dll *list = create_list();
@@ -27,6 +28,8 @@ int main(int argc, char *argv[]) {
   insert_before(list, 10, 0);
   print_list(list);
   delete_element(list, 0);
+  print_list(list);
+  insert_at_tail(list, 1000);
   print_list(list);
 
   free(list);
