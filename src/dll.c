@@ -108,6 +108,22 @@ void insert_before(Dll *list, uint reference, uint data) {
   return;
 }
 
+void delete_element(Dll *list, uint reference) {
+  check_list(list);
+  if (is_empty(list)) {
+    return;
+  }
+  Node *runner = list->head;
+  while (runner != NULL && runner->next->data != reference) {
+    runner = runner->next;
+  }
+  Node *node_to_delete = runner->next;
+  node_to_delete->next->previous = node_to_delete->previous;
+  node_to_delete->previous->next = node_to_delete->next;
+  free(node_to_delete);
+  return;
+}
+
 void print_list(Dll *list) {
   check_list(list);
   if (is_empty(list)) {
