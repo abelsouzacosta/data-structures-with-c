@@ -24,5 +24,7 @@ int main(int argc, char *argv[]) {
   print_list(list);
   delete_at_tail(list);
   print_list(list);
+  insert_before(list, 10, 0);
+  print_list(list);
   return 0;
 }
