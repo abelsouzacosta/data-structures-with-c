@@ -15,7 +15,7 @@ typedef struct Node {
 typedef struct DoublyLinkedList {
   struct Node *head;
   struct Node *tail;
-} DoublyLinkedList;
+} Dll;
 
 /**
  * check_list() - if the list pointer is null then throws an error and then
@@ -25,7 +25,7 @@ typedef struct DoublyLinkedList {
  *
  * Return: void
  */
-void check_list(DoublyLinkedList *list);
+void check_list(Dll *list);
 
 /**
  * is_empty() - tells if a list is empty
@@ -34,7 +34,7 @@ void check_list(DoublyLinkedList *list);
  *
  * Return: a boolean value. true if the list is empty and false otherwise
  */
-bool is_empty(DoublyLinkedList *list);
+bool is_empty(Dll *list);
 
 /**
  * is_unary() - tells if a list is unary
@@ -43,14 +43,14 @@ bool is_empty(DoublyLinkedList *list);
  *
  * Return: a boolean value. true if the list is unary false otherwise
  */
-bool is_unary(DoublyLinkedList *list);
+bool is_unary(Dll *list);
 
 /**
  * create_list() - allocates a new doubly linked list
  *
  * Return: a malloced doubly linked list
  */
-DoublyLinkedList *create_list(void);
+Dll *create_list(void);
 
 /**
  * init_node() - allocates a new node
@@ -70,7 +70,7 @@ Node *init_node(uint data);
  *
  * Return: void
  */
-void insert_at_empty_list(DoublyLinkedList *list, Node *node);
+void insert_at_empty_list(Dll *list, Node *node);
 
 /**
  * insert_at_head() - inserts a new node at the head of the list
@@ -80,7 +80,7 @@ void insert_at_empty_list(DoublyLinkedList *list, Node *node);
  *
  * Return: void
  */
-void insert_at_head(DoublyLinkedList *list, uint data);
+void insert_at_head(Dll *list, uint data);
 
 /**
  * insert_at_tail() - inserts a new node at the tail of the list
@@ -88,7 +88,7 @@ void insert_at_head(DoublyLinkedList *list, uint data);
  * @list: a pointer to a doubly linked list
  * @data: a uint value
  */
-void insert_at_tail(DoublyLinkedList *list, uint data);
+void insert_at_tail(Dll *list, uint data);
 
 /**
  * insert_before() - inserts a new node before the first node that holds the
@@ -100,7 +100,7 @@ void insert_at_tail(DoublyLinkedList *list, uint data);
  *
  * Return: void
  */
-void insert_before(DoublyLinkedList *list, uint reference, uint data);
+void insert_before(Dll *list, uint reference, uint data);
 
 /**
  * insert_after() - inserts a new node after the first node that holds the
@@ -112,7 +112,7 @@ void insert_before(DoublyLinkedList *list, uint reference, uint data);
  *
  * Return: void
  */
-void insert_after(DoublyLinkedList *list, uint reference, uint data);
+void insert_after(Dll *list, uint reference, uint data);
 
 /**
  * delete_at_head() - frees the malloced node at the head of the list and sets
@@ -122,7 +122,7 @@ void insert_after(DoublyLinkedList *list, uint reference, uint data);
  *
  * Return: void
  */
-void delete_at_head(DoublyLinkedList *list);
+void delete_at_head(Dll *list);
 
 /**
  * delete_at_tail() - frees the malloced node at the tail of the list and sets
@@ -132,7 +132,7 @@ void delete_at_head(DoublyLinkedList *list);
  *
  * Return: void
  */
-void delete_at_tail(DoublyLinkedList *list);
+void delete_at_tail(Dll *list);
 
 /**
  * delete_element() - frees the first node that holds the reference given
@@ -142,7 +142,7 @@ void delete_at_tail(DoublyLinkedList *list);
  *
  * Return: void
  */
-void delete_element(DoublyLinkedList *list, uint reference);
+void delete_element(Dll *list, uint reference);
 
 /**
  * delete_all_references() - frees all the nodes that holds the reference given
@@ -152,7 +152,7 @@ void delete_element(DoublyLinkedList *list, uint reference);
  *
  * Return: void
  */
-void delete_all_references(DoublyLinkedList *list, uint reference);
+void delete_all_references(Dll *list, uint reference);
 
 /**
  * reverse() - reverse the list making swapping between head and tail
@@ -161,7 +161,7 @@ void delete_all_references(DoublyLinkedList *list, uint reference);
  *
  * Return: void
  */
-void reverse(DoublyLinkedList *list);
+void reverse(Dll *list);
 
 /**
  * reverse_first() - reverse the first n positions given
@@ -171,7 +171,7 @@ void reverse(DoublyLinkedList *list);
  *
  * Return: void
  */
-void reverse_first(DoublyLinkedList *list, uint positions);
+void reverse_first(Dll *list, uint positions);
 
 /**
  * swap() - will swap the two first elements
@@ -180,7 +180,7 @@ void reverse_first(DoublyLinkedList *list, uint positions);
  *
  * Return: void
  */
-void swap(DoublyLinkedList *list);
+void swap(Dll *list);
 
 /**
  * get_node_at_position() - returns a pointer to a node in a specific position
@@ -191,7 +191,7 @@ void swap(DoublyLinkedList *list);
  *
  * Return: a pointer to the node in the given position
  */
-Node *get_node_at_position(DoublyLinkedList *list, uint position);
+Node *get_node_at_position(Dll *list, uint position);
 
 /**
  * swap_nodes() - will swap nodes at the positions given
@@ -202,8 +202,7 @@ Node *get_node_at_position(DoublyLinkedList *list, uint position);
  *
  * Return: void
  */
-void swap_nodes(DoublyLinkedList *list, uint first_node_position,
-                uint second_node_position);
+void swap_nodes(Dll *list, uint first_node_position, uint second_node_position);
 
 /**
  * print_list() - print the linked list
@@ -212,6 +211,6 @@ void swap_nodes(DoublyLinkedList *list, uint first_node_position,
  *
  * Return: void
  */
-void print_list(DoublyLinkedList *list);
+void print_list(Dll *list);
 
 #endif // !DOUBLYLINKEDLIST

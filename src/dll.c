@@ -1,9 +1,9 @@
-#include "../headers/doublylinkedlist.h"
+#include "../headers/dll.h"
 #include <stdio.h>
 #include <stdlib.h>
 
-DoublyLinkedList *create_list() {
-  DoublyLinkedList *list = (DoublyLinkedList *)malloc(sizeof(DoublyLinkedList));
+Dll *create_list() {
+  Dll *list = (Dll *)malloc(sizeof(Dll));
   if (list == NULL) {
     printf("There was an error trying to allocate the list");
     return NULL;
@@ -13,7 +13,7 @@ DoublyLinkedList *create_list() {
   return list;
 }
 
-void check_list(DoublyLinkedList *list) {
+void check_list(Dll *list) {
   if (list == NULL) {
     perror("Probably there was an error trying to allocate the list");
     exit(1);
@@ -32,17 +32,15 @@ Node *init_node(uint data) {
   return new_node;
 }
 
-bool is_empty(DoublyLinkedList *list) {
-  return list->head == NULL ? true : false;
-}
+bool is_empty(Dll *list) { return list->head == NULL ? true : false; }
 
-void insert_at_empty_list(DoublyLinkedList *list, Node *node) {
+void insert_at_empty_list(Dll *list, Node *node) {
   list->head = node;
   list->tail = node;
   return;
 }
 
-void insert_at_head(DoublyLinkedList *list, uint data) {
+void insert_at_head(Dll *list, uint data) {
   check_list(list);
   Node *node = init_node(data);
   // There is already an element in the list
@@ -56,7 +54,7 @@ void insert_at_head(DoublyLinkedList *list, uint data) {
   insert_at_empty_list(list, node);
 }
 
-void delete_at_head(DoublyLinkedList *list) {
+void delete_at_head(Dll *list) {
   check_list(list);
   if (is_empty(list)) {
     return;
@@ -68,7 +66,7 @@ void delete_at_head(DoublyLinkedList *list) {
   return;
 }
 
-void insert_at_tail(DoublyLinkedList *list, uint data) {
+void insert_at_tail(Dll *list, uint data) {
   check_list(list);
   Node *node = init_node(data);
   if (!is_empty(list)) {
@@ -81,7 +79,7 @@ void insert_at_tail(DoublyLinkedList *list, uint data) {
   insert_at_empty_list(list, node);
 }
 
-void delete_at_tail(DoublyLinkedList *list) {
+void delete_at_tail(Dll *list) {
   check_list(list);
   if (is_empty(list)) {
     return;
@@ -93,7 +91,7 @@ void delete_at_tail(DoublyLinkedList *list) {
   return;
 }
 
-void print_list(DoublyLinkedList *list) {
+void print_list(Dll *list) {
   check_list(list);
   if (is_empty(list)) {
     printf("[]");
