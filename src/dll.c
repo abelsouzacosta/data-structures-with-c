@@ -191,7 +191,6 @@ void delete_all_references(Dll *list, uint reference) {
   while (runner != NULL) {
     DllNode *next_node = runner->next;
     if (runner->data == reference) {
-      printf("Node %d will be deleted", runner->data);
       DllNode *node_to_delete = runner;
       if (runner->next != NULL) {
         runner->next->previous = runner->previous;
