@@ -93,6 +93,13 @@ void delete_at_tail(Dll *list) {
   if (is_empty(list)) {
     return;
   }
+  if (is_unary(list)) {
+    Node *node_to_delete = list->tail;
+    list->head = NULL;
+    list->tail = NULL;
+    free(node_to_delete);
+    return;
+  }
   Node *node_to_delete = list->tail;
   list->tail = node_to_delete->previous;
   list->tail->next = NULL;
