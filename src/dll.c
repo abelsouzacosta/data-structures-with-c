@@ -34,6 +34,8 @@ Node *init_node(uint data) {
 
 bool is_empty(Dll *list) { return list->head == NULL ? true : false; }
 
+bool is_unary(Dll *list) { return list->head->next == NULL ? true : false; }
+
 void insert_at_empty_list(Dll *list, Node *node) {
   list->head = node;
   list->tail = node;
