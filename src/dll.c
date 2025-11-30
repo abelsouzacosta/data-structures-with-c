@@ -142,6 +142,17 @@ void delete_element(Dll *list, uint reference) {
   if (runner == NULL) {
     return; // reference not found in the list
   }
+  if (runner->previous != NULL) {
+    runner->previous->next = runner->next;
+  } else {
+    list->head = runner->next;
+  }
+  if (runner->next != NULL) {
+    runner->next->previous = runner->previous;
+  } else {
+    list->tail = runner->previous;
+  }
+  free(runner);
   return;
 }
 
