@@ -182,6 +182,36 @@ void insert_after(Dll *list, uint reference, uint data) {
   return;
 }
 
+void delete_all_references(Dll *list, uint reference) {
+  check_list(list);
+  if (is_empty(list)) {
+    return;
+  }
+  Node *runner = list->head;
+  while (runner != NULL) {
+    Node *next_node = runner->next;
+    if (runner->data == reference) {
+      Node *node_to_delete = runner;
+      printf("Node %d will be deleted", runner->data);
+      if (runner->next != NULL) {
+        runner->next->previous = runner->previous;
+      } else {
+        list->tail = runner->previous;
+      }
+
+      if (runner->previous != NULL) {
+        runner->previous->next = runner->next;
+      } else {
+        list->head = runner->next;
+      }
+
+      free(node_to_delete);
+    }
+    runner = next_node;
+  }
+  return;
+}
+
 void print_list(Dll *list) {
   check_list(list);
   if (is_empty(list)) {
