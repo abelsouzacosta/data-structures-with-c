@@ -23,6 +23,9 @@ int main(int argc, char *argv[]) {
   insert_before(list, 1, 0);
   insert_after(list, 1, 0);
   print_list(list);
+  delete_all_references(list, 0);
+  print_list(list);
+  print_list(list);
 
   free(list);
   return 0;
