@@ -121,6 +121,7 @@ void insert_before(Dll *list, uint reference, uint data) {
   }
   Node *new_node = init_node(data);
   new_node->next = runner;
+  new_node->previous = runner->previous;
   if (runner->previous != NULL) {
     runner->previous->next = new_node;
   } else {
