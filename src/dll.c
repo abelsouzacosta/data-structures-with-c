@@ -137,15 +137,19 @@ void insert_after(Dll *list, uint reference, uint data) {
   while (runner != NULL && runner->data != reference) {
     runner = runner->next;
   }
-  Node *new_node = init_node(data);
-  new_node->previous = runner;
-  if (runner->next != NULL) {
-    new_node->next = runner->next;
-    runner->next = new_node;
-  } else {
-    insert_at_tail(list, data);
+  // reference not found in the list
+  if (runner == NULL) {
     return;
   }
+  Node *new_node = init_node(data);
+  new_node->next = runner->next;
+  new_node->previous = runner;
+  if (new_node->next != NULL) {
+    new_node->next->previous = new_node;
+  } else {
+    list->tail = new_node; // inserted at the end of the list
+  }
+  runner->next = new_node;
   return;
 }
 
