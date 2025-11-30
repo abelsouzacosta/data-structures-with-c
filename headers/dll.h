@@ -5,16 +5,16 @@
 #include <sys/types.h>
 
 // node structure for a doubly linked list
-typedef struct Node {
-  struct Node *previous;
-  struct Node *next;
+typedef struct DllNode {
+  struct DllNode *previous;
+  struct DllNode *next;
   uint data;
-} Node;
+} DllNode;
 
 // doubly linked list structure
 typedef struct DoublyLinkedList {
-  struct Node *head;
-  struct Node *tail;
+  struct DllNode *head;
+  struct DllNode *tail;
 } Dll;
 
 /**
@@ -59,7 +59,7 @@ Dll *create_list(void);
  *
  * Return: a malloced node with previous and next pointing to NULL positions
  */
-Node *init_node(uint data);
+DllNode *init_node(uint data);
 
 /**
  * insert_at_empty_list() - insert a node in a empty list by initializing head
@@ -70,7 +70,7 @@ Node *init_node(uint data);
  *
  * Return: void
  */
-void insert_at_empty_list(Dll *list, Node *node);
+void insert_at_empty_list(Dll *list, DllNode *node);
 
 /**
  * insert_at_head() - inserts a new node at the head of the list
@@ -191,7 +191,7 @@ void swap(Dll *list);
  *
  * Return: a pointer to the node in the given position
  */
-Node *get_node_at_position(Dll *list, uint position);
+DllNode *get_node_at_position(Dll *list, uint position);
 
 /**
  * swap_nodes() - will swap nodes at the positions given
