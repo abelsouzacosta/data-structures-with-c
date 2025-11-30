@@ -61,6 +61,13 @@ void delete_at_head(Dll *list) {
   if (is_empty(list)) {
     return;
   }
+  if (is_unary(list)) {
+    Node *node_to_delete = list->head;
+    list->head = NULL;
+    list->tail = NULL;
+    free(node_to_delete);
+    return;
+  }
   Node *node_to_delete = list->head;
   list->head = node_to_delete->next;
   list->head->previous = NULL;
