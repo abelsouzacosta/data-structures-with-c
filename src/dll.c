@@ -20,8 +20,8 @@ void check_list(Dll *list) {
   }
 }
 
-Node *init_node(uint data) {
-  Node *new_node = (Node *)malloc(sizeof(Node));
+DllNode *init_node(uint data) {
+  DllNode *new_node = (DllNode *)malloc(sizeof(DllNode));
   if (new_node == NULL) {
     printf("There was an error trying to create a node");
     return NULL;
@@ -36,7 +36,7 @@ bool is_empty(Dll *list) { return list->head == NULL ? true : false; }
 
 bool is_unary(Dll *list) { return list->head->next == NULL ? true : false; }
 
-void insert_at_empty_list(Dll *list, Node *node) {
+void insert_at_empty_list(Dll *list, DllNode *node) {
   list->head = node;
   list->tail = node;
   return;
@@ -44,10 +44,10 @@ void insert_at_empty_list(Dll *list, Node *node) {
 
 void insert_at_head(Dll *list, uint data) {
   check_list(list);
-  Node *node = init_node(data);
+  DllNode *node = init_node(data);
   // There is already an element in the list
   if (!is_empty(list)) {
-    Node *old_head = list->head;
+    DllNode *old_head = list->head;
     node->next = old_head;
     old_head->previous = node;
     list->head = node;
@@ -62,13 +62,13 @@ void delete_at_head(Dll *list) {
     return;
   }
   if (is_unary(list)) {
-    Node *node_to_delete = list->head;
+    DllNode *node_to_delete = list->head;
     list->head = NULL;
     list->tail = NULL;
     free(node_to_delete);
     return;
   }
-  Node *node_to_delete = list->head;
+  DllNode *node_to_delete = list->head;
   list->head = node_to_delete->next;
   list->head->previous = NULL;
   free(node_to_delete);
@@ -77,9 +77,9 @@ void delete_at_head(Dll *list) {
 
 void insert_at_tail(Dll *list, uint data) {
   check_list(list);
-  Node *node = init_node(data);
+  DllNode *node = init_node(data);
   if (!is_empty(list)) {
-    Node *old_tail = list->tail;
+    DllNode *old_tail = list->tail;
     node->previous = old_tail;
     old_tail->next = node;
     list->tail = node;
@@ -94,13 +94,13 @@ void delete_at_tail(Dll *list) {
     return;
   }
   if (is_unary(list)) {
-    Node *node_to_delete = list->tail;
+    DllNode *node_to_delete = list->tail;
     list->head = NULL;
     list->tail = NULL;
     free(node_to_delete);
     return;
   }
-  Node *node_to_delete = list->tail;
+  DllNode *node_to_delete = list->tail;
   list->tail = node_to_delete->previous;
   list->tail->next = NULL;
   free(node_to_delete);
@@ -112,14 +112,14 @@ void insert_before(Dll *list, uint reference, uint data) {
   if (is_empty(list)) {
     return;
   }
-  Node *runner = list->head;
+  DllNode *runner = list->head;
   while (runner != NULL && runner->data != reference) {
     runner = runner->next;
   }
   if (runner == NULL) {
     return; // reference not found in the list
   }
-  Node *new_node = init_node(data);
+  DllNode *new_node = init_node(data);
   new_node->next = runner;
   new_node->previous = runner->previous;
   if (runner->previous != NULL) {
@@ -136,7 +136,7 @@ void delete_element(Dll *list, uint reference) {
   if (is_empty(list)) {
     return;
   }
-  Node *runner = list->head;
+  DllNode *runner = list->head;
   while (runner != NULL && runner->data != reference) {
     runner = runner->next;
   }
@@ -162,7 +162,7 @@ void insert_after(Dll *list, uint reference, uint data) {
   if (is_empty(list)) {
     return;
   }
-  Node *runner = list->head;
+  DllNode *runner = list->head;
   while (runner != NULL && runner->data != reference) {
     runner = runner->next;
   }
@@ -170,7 +170,7 @@ void insert_after(Dll *list, uint reference, uint data) {
   if (runner == NULL) {
     return;
   }
-  Node *new_node = init_node(data);
+  DllNode *new_node = init_node(data);
   new_node->next = runner->next;
   new_node->previous = runner;
   if (new_node->next != NULL) {
@@ -187,12 +187,12 @@ void delete_all_references(Dll *list, uint reference) {
   if (is_empty(list)) {
     return;
   }
-  Node *runner = list->head;
+  DllNode *runner = list->head;
   while (runner != NULL) {
-    Node *next_node = runner->next;
+    DllNode *next_node = runner->next;
     if (runner->data == reference) {
-      Node *node_to_delete = runner;
       printf("Node %d will be deleted", runner->data);
+      DllNode *node_to_delete = runner;
       if (runner->next != NULL) {
         runner->next->previous = runner->previous;
       } else {
@@ -218,7 +218,7 @@ void print_list(Dll *list) {
     printf("[]");
     return;
   }
-  Node *runner = list->head;
+  DllNode *runner = list->head;
 
   printf("[");
   while (runner != NULL) {
