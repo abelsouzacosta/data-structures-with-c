@@ -128,6 +128,27 @@ void delete_element(Dll *list, uint reference) {
   return;
 }
 
+void insert_after(Dll *list, uint reference, uint data) {
+  check_list(list);
+  if (is_empty(list)) {
+    return;
+  }
+  Node *runner = list->head;
+  while (runner != NULL && runner->data != reference) {
+    runner = runner->next;
+  }
+  Node *new_node = init_node(data);
+  new_node->previous = runner;
+  if (runner->next != NULL) {
+    new_node->next = runner->next;
+    runner->next = new_node;
+  } else {
+    insert_at_tail(list, data);
+    return;
+  }
+  return;
+}
+
 void print_list(Dll *list) {
   check_list(list);
   if (is_empty(list)) {
