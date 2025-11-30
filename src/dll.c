@@ -96,19 +96,21 @@ void insert_before(Dll *list, uint reference, uint data) {
   if (is_empty(list)) {
     return;
   }
-  if (list->head->data == reference) {
-    insert_at_head(list, data);
-    return;
-  }
   Node *runner = list->head;
-  while (runner != NULL && runner->next->data != reference) {
+  while (runner != NULL && runner->data != reference) {
     runner = runner->next;
   }
+  if (runner == NULL) {
+    return; // reference not found in the list
+  }
   Node *new_node = init_node(data);
-  Node *next = runner->next;
-  new_node->previous = runner;
-  new_node->next = next;
-  runner->next = new_node;
+  new_node->next = runner;
+  if (runner->previous != NULL) {
+    runner->previous->next = new_node;
+  } else {
+    list->head = new_node;
+  }
+  runner->previous = new_node;
   return;
 }
 
