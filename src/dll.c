@@ -143,6 +143,9 @@ void delete_element(Dll *list, uint reference) {
   node_to_delete->next->previous = node_to_delete->previous;
   node_to_delete->previous->next = node_to_delete->next;
   free(node_to_delete);
+  if (runner == NULL) {
+    return; // reference not found in the list
+  }
   return;
 }
 
