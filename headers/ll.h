@@ -133,4 +133,16 @@ void reverse_first(Sll *list, uint n);
  * Return: void
  */
 void swap(Sll *list);
+
+/**
+ * swap_positions() - swaps the nodes at the two given positions
+ *
+ * @list: a pointer to a singly linked list
+ * @first_position: the position of the first node
+ * @second_position: the position of the second node
+ *
+ * Return: void
+ */
+void swap_positions(Sll *list, uint first_position, uint second_position);
+
 #endif
