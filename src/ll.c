@@ -86,6 +86,12 @@ void delete_at_tail(Sll *list) {
   if (is_empty(list)) {
     return;
   }
+  if (list->head == list->tail) {
+    free(list->head);
+    list->head = NULL;
+    list->tail = NULL;
+    return;
+  }
   LlNode *runner = list->head;
   while (runner != NULL && runner->next != list->tail) {
     runner = runner->next;
