@@ -1,6 +1,7 @@
 #ifndef LINKEDLIST
 #define LINKEDLIST
 
+#include <stdbool.h>
 #include <sys/types.h>
 
 typedef struct LlNode {
