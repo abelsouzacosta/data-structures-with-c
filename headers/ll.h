@@ -19,7 +19,7 @@ typedef struct SinglyLinkedList {
  *
  * Return a malloced singly linked list
  */
-Sll create_list(void);
+Sll *create_list(void);
 
 /**
  * init_node() - allocates a new node
@@ -27,7 +27,7 @@ Sll create_list(void);
  * @data: the value carried by the node
  *  Return: a malloced node with next set to NULL
  */
-LlNode init_node(uint data);
+LlNode *init_node(uint data);
 
 /**
  * check_list() - checks if the list is properly malloced
