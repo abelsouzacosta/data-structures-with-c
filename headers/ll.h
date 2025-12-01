@@ -76,4 +76,15 @@ void insert_at_empty_list(Sll *list, LlNode *node);
  */
 void insert_at_head(Sll *list, uint data);
 
+/**
+ * insert_at_tail() - inserts a node with the data given in the tail of the
+ * singly linked list
+ *
+ * @list: a pointer to a singly linked list
+ * @data: a unsigned integer
+ *
+ * Return: void
+ */
+
+void insert_at_tail(Sll *list, uint data);
 #endif
