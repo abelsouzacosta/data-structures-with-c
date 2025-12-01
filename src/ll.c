@@ -107,3 +107,23 @@ void delete_at_tail(Sll *list) {
   free(node_to_delete);
   return;
 }
+
+void reverse(Sll *list) {
+  check_list(list);
+  if (is_empty(list) || is_unary(list)) {
+    return;
+  }
+  LlNode *runner = list->head;
+  LlNode *old_head = list->head;
+  LlNode *previous = NULL;
+  while (runner != NULL) {
+    LlNode *next = runner->next; // stores the next value
+    runner->next = previous;
+    previous = runner;
+    runner = next; // moves forward in the list
+  }
+  // updates the head and the tail
+  list->head = previous;
+  list->tail = old_head;
+  return;
+}
