@@ -69,6 +69,12 @@ void delete_at_head(Sll *list) {
   if (is_empty(list)) {
     return;
   }
+  if (list->head == list->tail) {
+    free(list->head);
+    list->head = NULL;
+    list->tail = NULL;
+    return;
+  }
   LlNode *node_to_delete = list->head;
   list->head = node_to_delete->next;
   free(node_to_delete);
