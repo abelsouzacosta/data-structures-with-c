@@ -52,3 +52,14 @@ void insert_at_head(Sll *list, uint data) {
   return;
 }
 
+void insert_at_tail(Sll *list, uint data) {
+  check_list(list);
+  LlNode *new_node = init_node(data);
+  if (is_empty(list)) {
+    insert_at_empty_list(list, new_node);
+    return;
+  }
+  list->tail->next = new_node;
+  list->tail = new_node;
+  return;
+}
