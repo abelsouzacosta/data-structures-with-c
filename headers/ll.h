@@ -114,4 +114,14 @@ void delete_at_tail(Sll *list);
  * Return: void
  */
 void reverse(Sll *list);
+
+/**
+ * reverse_first() - reverse the first 'n' positions of the list
+ *
+ * @list: a pointer to a singly linked list
+ * @n: the number of positions to be reversed
+ *
+ * Return: void
+ */
+void reverse_first(Sll *list, uint n);
 #endif
