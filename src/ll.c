@@ -67,7 +67,6 @@ void insert_at_tail(Sll *list, uint data) {
 }
 
 void delete_from_unary_list(Sll *list) {
-  check_list(list);
   free(list->head);
   list->head = NULL;
   list->tail = NULL;
