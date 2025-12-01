@@ -55,5 +55,15 @@ bool is_empty(Sll *list);
  */
 bool is_unary(Sll *list);
 
+/**
+ * insert_at_empty_list() - inserts a node in a empty list
+ *
+ * @list: a pointer to a singly linked list
+ * @node: a pointer to a singly linked list node
+ *
+ * Return: void
+ */
+void insert_at_empty_list(Sll *list, LlNode *node);
+
 
 #endif
