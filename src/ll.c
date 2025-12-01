@@ -75,3 +75,18 @@ void delete_at_head(Sll *list) {
   return;
 }
 
+void delete_at_tail(Sll *list) {
+  check_list(list);
+  if (is_empty(list)) {
+    return;
+  }
+  LlNode *runner = list->head;
+  while (runner != NULL && runner->next != list->tail) {
+    runner = runner->next;
+  }
+  LlNode *node_to_delete = runner->next;
+  runner->next = NULL;
+  list->tail = runner;
+  free(node_to_delete);
+  return;
+}
