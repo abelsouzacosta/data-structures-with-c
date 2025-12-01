@@ -33,6 +33,8 @@ void check_list(Sll *list) {
 
 bool is_empty(Sll *list) { return list->head == NULL ? true : false; }
 
+bool is_unary(Sll *list) { return list->head == list->tail ? true : false; }
+
 void insert_at_empty_list(Sll *list, LlNode *node) {
   check_list(list);
   list->head = node;
@@ -69,7 +71,7 @@ void delete_at_head(Sll *list) {
   if (is_empty(list)) {
     return;
   }
-  if (list->head == list->tail) {
+  if (is_unary(list)) {
     free(list->head);
     list->head = NULL;
     list->tail = NULL;
@@ -86,7 +88,7 @@ void delete_at_tail(Sll *list) {
   if (is_empty(list)) {
     return;
   }
-  if (list->head == list->tail) {
+  if (is_unary(list)) {
     free(list->head);
     list->head = NULL;
     list->tail = NULL;
