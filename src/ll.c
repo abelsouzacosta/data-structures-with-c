@@ -63,3 +63,15 @@ void insert_at_tail(Sll *list, uint data) {
   list->tail = new_node;
   return;
 }
+
+void delete_at_head(Sll *list) {
+  check_list(list);
+  if (is_empty(list)) {
+    return;
+  }
+  LlNode *node_to_delete = list->head;
+  list->head = node_to_delete->next;
+  free(node_to_delete);
+  return;
+}
+
