@@ -23,3 +23,32 @@ LlNode *init_node(uint data) {
   new_node->next = NULL;
   return new_node;
 }
+
+void check_list(Sll *list) {
+  if (list == NULL) {
+    perror("Probably there was an error trying to allocate the list");
+    exit(1);
+  }
+}
+
+bool is_empty(Sll *list) { return list->head == NULL ? true : false; }
+
+void insert_at_empty_list(Sll *list, LlNode *node) {
+  check_list(list);
+  list->head = node;
+  list->tail = node;
+  return;
+}
+
+void insert_at_head(Sll *list, uint data) {
+  check_list(list);
+  LlNode *new_node = init_node(data);
+  if (is_empty(list)) {
+    insert_at_empty_list(list, new_node);
+    return;
+  }
+  new_node->next = list->head;
+  list->head = new_node;
+  return;
+}
+
