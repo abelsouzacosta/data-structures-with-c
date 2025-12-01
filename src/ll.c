@@ -13,3 +13,13 @@ Sll *create_list(void) {
   return list;
 }
 
+LlNode *init_node(uint data) {
+  LlNode *new_node = (LlNode *)malloc(sizeof(LlNode));
+  if (new_node == NULL) {
+    printf("There was an error trying to all9ocate the node");
+    return NULL;
+  }
+  new_node->data = data;
+  new_node->next = NULL;
+  return new_node;
+}
