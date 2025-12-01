@@ -96,4 +96,13 @@ void insert_at_tail(Sll *list, uint data);
  * Return: void
  */
 void delete_at_head(Sll *list);
+
+/**
+ * delete_at_tail() - deletes the node at the tail of the list
+ *
+ * @list: a pointer to a singly linked list
+ *
+ * Return: void
+ */
+void delete_at_tail(Sll *list);
 #endif
