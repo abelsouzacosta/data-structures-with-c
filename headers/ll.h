@@ -105,4 +105,13 @@ void delete_at_head(Sll *list);
  * Return: void
  */
 void delete_at_tail(Sll *list);
+
+/**
+ * reverse() - reverses the list
+ *
+ * @list: a pointer to a singly linked list
+ *
+ * Return: void
+ */
+void reverse(Sll *list);
 #endif
