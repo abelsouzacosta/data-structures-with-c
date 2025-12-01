@@ -124,4 +124,13 @@ void reverse(Sll *list);
  * Return: void
  */
 void reverse_first(Sll *list, uint n);
+
+/**
+ * swap() - swaps the two first elements of the list
+ *
+ * @list: a pointer to a singly linked list
+ *
+ * Return: void
+ */
+void swap(Sll *list);
 #endif
