@@ -65,5 +65,15 @@ bool is_unary(Sll *list);
  */
 void insert_at_empty_list(Sll *list, LlNode *node);
 
+/**
+ * insert_at_head() - inserts a node with the data given in the head of the
+ * singly linked list
+ *
+ * @list: a pointer to a singly linked list
+ * @data: a unsigned integer
+ *
+ * Return: void
+ */
+void insert_at_head(Sll *list, uint data);
 
 #endif
