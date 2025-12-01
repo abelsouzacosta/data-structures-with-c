@@ -66,15 +66,21 @@ void insert_at_tail(Sll *list, uint data) {
   return;
 }
 
+void delete_from_unary_list(Sll *list) {
+  check_list(list);
+  free(list->head);
+  list->head = NULL;
+  list->tail = NULL;
+  return;
+}
+
 void delete_at_head(Sll *list) {
   check_list(list);
   if (is_empty(list)) {
     return;
   }
   if (is_unary(list)) {
-    free(list->head);
-    list->head = NULL;
-    list->tail = NULL;
+    delete_from_unary_list(list);
     return;
   }
   LlNode *node_to_delete = list->head;
@@ -89,9 +95,7 @@ void delete_at_tail(Sll *list) {
     return;
   }
   if (is_unary(list)) {
-    free(list->head);
-    list->head = NULL;
-    list->tail = NULL;
+    delete_from_unary_list(list);
     return;
   }
   LlNode *runner = list->head;
