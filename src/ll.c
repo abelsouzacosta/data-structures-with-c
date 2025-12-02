@@ -127,3 +127,21 @@ void reverse(Sll *list) {
   list->tail = old_head;
   return;
 }
+
+void print_list(Sll *list) {
+  check_list(list);
+  if (is_empty(list)) {
+    printf("[]");
+  }
+  LlNode *runner = list->head;
+  printf("[");
+  while (runner != NULL) {
+    if (runner == list->tail) {
+      printf("%u", runner->data);
+    } else
+      printf("%u -> ", runner->data);
+    runner = runner->next;
+  }
+  printf("]\n");
+  return;
+}
