@@ -155,4 +155,13 @@ void swap(Sll *list);
  */
 void swap_positions(Sll *list, uint first_position, uint second_position);
 
+/**
+ * print_list() - prints the list
+ *
+ * @list: a pointer to a singly linked list
+ *
+ * Return: void
+ */
+void print_list(Sll *list);
+
 #endif
