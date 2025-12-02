@@ -1,8 +1,7 @@
-#include "headers/dll.h"
-#include <stdlib.h>
+#include "headers/ll.h"
 
 int main(int argc, char *argv[]) {
-  Dll *list = create_list();
+  Sll *list = create_list();
 
   insert_at_head(list, 1);
   insert_at_head(list, 2);
@@ -16,17 +15,7 @@ int main(int argc, char *argv[]) {
   insert_at_head(list, 10);
   insert_at_head(list, 11);
   insert_at_head(list, 12);
-  insert_at_head(list, 13);
-  insert_at_head(list, 14);
-  insert_at_head(list, 15);
-  insert_at_head(list, 16);
-  insert_before(list, 1, 0);
-  insert_after(list, 1, 0);
-  print_list(list);
-  delete_all_references(list, 0);
-  print_list(list);
-  print_list(list);
 
-  free(list);
+  print_list(list);
   return 0;
 }
