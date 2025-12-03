@@ -128,6 +128,31 @@ void reverse(Sll *list) {
   return;
 }
 
+void reverse_first(Sll *list, uint n) {
+  check_list(list);
+  if (is_empty(list) || is_unary(list) || n == 0) {
+    return;
+  }
+  LlNode *runner = list->head;
+  LlNode *blockTail = list->head;
+  LlNode *previous = NULL;
+  LlNode *next = NULL;
+  uint positions = 0; // accumulator for positions
+  while (runner != NULL && positions < n) {
+    ++positions;
+    next = runner->next;
+    runner->next = previous;
+    previous = runner;
+    runner = next;
+  }
+  // partially ordered list
+  if (next != NULL) {
+    blockTail->next = next;
+  }
+  list->head = previous;
+  return;
+}
+
 void print_list(Sll *list) {
   check_list(list);
   if (is_empty(list)) {
