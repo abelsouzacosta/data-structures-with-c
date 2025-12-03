@@ -17,5 +17,7 @@ int main(int argc, char *argv[]) {
   insert_at_head(list, 12);
 
   print_list(list);
+  reverse_first(list, 5);
+  print_list(list);
   return 0;
 }
