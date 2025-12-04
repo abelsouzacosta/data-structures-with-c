@@ -136,6 +136,15 @@ void reverse(Sll *list);
 void reverse_first(Sll *list, uint n);
 
 /**
+ * remove_duplicates() - remove all nodes that hold the same value as data
+ *
+ * @list: a pointer to a singly linked list
+ *
+ * Return: void
+ */
+void remove_duplicates(Sll *list);
+
+/**
  * swap() - swaps the two first elements of the list
  *
  * @list: a pointer to a singly linked list
