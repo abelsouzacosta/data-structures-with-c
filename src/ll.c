@@ -168,6 +168,34 @@ void swap(Sll *list) {
   return;
 }
 
+void remove_duplicates(Sll *list) {
+  check_list(list);
+  if (is_empty(list) || is_unary(list)) {
+    return;
+  }
+  // two pointer technique
+  LlNode *current = list->head;
+  while (current != NULL) {
+    LlNode *runner = current;
+    while (runner->next != NULL) {
+      if (current->data == runner->next->data) {
+        LlNode *node_to_delete = runner->next;
+        // edge case if the duplicated node is the last node
+        // of the list
+        if (node_to_delete == list->tail) {
+          list->tail = runner;
+        }
+        runner->next = node_to_delete->next;
+        free(node_to_delete);
+      } else {
+        runner = runner->next;
+      }
+    }
+    current = current->next;
+  }
+  return;
+}
+
 void print_list(Sll *list) {
   check_list(list);
   if (is_empty(list)) {
