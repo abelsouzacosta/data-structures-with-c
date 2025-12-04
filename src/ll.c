@@ -153,6 +153,21 @@ void reverse_first(Sll *list, uint n) {
   return;
 }
 
+void swap(Sll *list) {
+  check_list(list);
+  if (is_empty(list) || is_unary(list)) {
+    return;
+  }
+  LlNode *first_element = list->head;
+  LlNode *second_element = list->head->next;
+
+  // updates the references
+  first_element->next = second_element->next;
+  second_element->next = first_element;
+  list->head = second_element;
+  return;
+}
+
 void print_list(Sll *list) {
   check_list(list);
   if (is_empty(list)) {
